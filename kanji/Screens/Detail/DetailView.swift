@@ -42,6 +42,7 @@ struct DetailView: View {
                 TopAppbarView()
                 
                 KanjiView(kanji: self.characters[self.index].kanji)
+                    .padding([.top, .horizontal], -60)
                 
                 CharacterInfoView()
                 
@@ -94,63 +95,61 @@ struct DetailView: View {
     
     @ViewBuilder
     private func CharacterInfoView() -> some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: 24) {
-                VStack(spacing: 12) {
-                    HStack {
-                        Text(self.characters[self.index].korean)
-                            .font(.title2)
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                        
-                        Text("\(self.index)/\(self.total)")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                    }
+        VStack(spacing: 24) {
+            VStack(spacing: 12) {
+                HStack {
+                    Text(self.characters[self.index].korean)
+                        .font(.title2)
+                        .foregroundColor(.white)
                     
-                    Divider()
-                        .background(Color.white)
+                    Spacer()
+                    
+                    Text("\(self.index + 1)/\(self.total)")
+                        .font(.title3)
+                        .foregroundColor(.white)
                 }
                 
-                VStack(spacing: 20) {
-                    HStack(spacing: 12) {
-                        Text("음")
-                            .font(.title3)
-                            .foregroundColor(.black)
-                            .frame(width: 30, height: 30)
-                            .background(Circle().fill(Color.white.opacity(0.75)))
-                        
-                        Text(self.characters[self.index].fullSound)
-                            .font(.title3)
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                    }
-                    
-                    HStack(spacing: 12) {
-                        Text("훈")
-                            .font(.title3)
-                            .foregroundColor(.black)
-                            .frame(width: 30, height: 30)
-                            .background(Circle().fill(Color.white.opacity(0.75)))
-                        
-                        Text(self.characters[self.index].fullMeaning)
-                            .font(.title3)
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                    }
-                }
-                
-                Spacer()
+                Divider()
+                    .background(Color.white)
             }
-            .padding()
+            
+            VStack(spacing: 20) {
+                HStack(spacing: 12) {
+                    Text("음")
+                        .font(.title3)
+                        .foregroundColor(.black)
+                        .frame(width: 30, height: 30)
+                        .background(Circle().fill(Color.white.opacity(0.9)))
+                    
+                    Text(self.characters[self.index].fullSound)
+                        .font(.title3)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                }
+                
+                HStack(spacing: 12) {
+                    Text("훈")
+                        .font(.title3)
+                        .foregroundColor(.black)
+                        .frame(width: 30, height: 30)
+                        .background(Circle().fill(Color.white.opacity(0.9)))
+                    
+                    Text(self.characters[self.index].fullMeaning)
+                        .font(.title3)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                }
+            }
+            
+            Spacer()
         }
+        .padding()
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color.black.opacity(0.75))
+                .fill(Color.black.opacity(0.8))
         )
     }
 }

@@ -16,20 +16,21 @@ struct KanjiView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .bottom) {
-                Image("boardBg")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: geometry.size.width)
-                
-                Text(self.kanji)
-                    .font(.system(size: geometry.size.width / 2.8))
-                    .fixedSize()
-                    .padding(.bottom, geometry.size.width * 0.025)
-            }
-        }
-        .frame(maxWidth: .infinity)
+        Image("boardBg")
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: .infinity)
+            .overlay(
+                GeometryReader { geometry in
+                    Text(self.kanji)
+                        .font(.system(size: (geometry.size.width / 4.4) - 5))
+                        .fixedSize()
+                        .frame(
+                            width: geometry.size.width,
+                            height: geometry.size.height * 1.54
+                        )
+                }
+            )
     }
 }
 
