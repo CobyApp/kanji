@@ -13,10 +13,17 @@ struct KanjiView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            Image("boardBg")
-                .resizable()
-                .scaledToFit()
-                .frame(width: geometry.size.width)
+            ZStack(alignment: .bottom) {
+                Image("boardBg")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width)
+                
+                Text(self.character.kanji)
+                    .font(.system(size: geometry.size.width / 2.8))
+                    .fixedSize()
+                    .padding(.bottom, geometry.size.width * 0.025)
+            }
         }
     }
 }
