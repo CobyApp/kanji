@@ -14,7 +14,7 @@ struct MainView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image("full1")
+                Image("mainBg")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height)
@@ -23,18 +23,10 @@ struct MainView: View {
                 VStack {
                     Spacer()
                     
-                    Button(action: {
+                    Button("니코랑 공부하기") {
                         print("니코랑 한자 외우기")
-                    }) {
-                        Text("니코랑 공부하기")
-                            .font(.title)
-                            .padding()
-                   
                     }
-                    .frame(maxWidth: .infinity)
-                    .background(Color.black.opacity(0.75))
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
+                    .buttonStyle(MainButtonStyle())
                     .padding(.horizontal, 20)
                     .padding(.bottom, 30)
                 }
