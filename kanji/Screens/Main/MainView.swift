@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    let characters = CharacterStorage.shared.characters
+    
     var body: some View {
         Text("Main")
     }
