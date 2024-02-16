@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GradeType: CaseIterable {
+enum GradeType: String, CaseIterable {
     case all, one, two, three, four, five, six, mid
     
     var title: String {

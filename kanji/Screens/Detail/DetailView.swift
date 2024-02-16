@@ -14,13 +14,15 @@ struct DetailView: View {
     @State private var characters: [Character]
     @State private var index: Int
     
+    private let grade: GradeType
     private let total: Int
     
     init(grade: GradeType) {
         let characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
-        
+        let index = UserDefaults.standard.integer(forKey: grade.rawValue)
         self._characters = State(wrappedValue: characters)
-        self._index = State(wrappedValue: 0)
+        self._index = State(wrappedValue: index)
+        self.grade = grade
         self.total = characters.count
     }
     
@@ -40,9 +42,11 @@ struct DetailView: View {
             
             VStack(spacing: 0) {
                 TopAppbarView()
+                    .zIndex(1)
                 
                 KanjiView(kanji: self.characters[self.index].kanji)
                     .padding([.top, .horizontal], -60)
+                    .zIndex(0)
                 
                 CharacterInfoView()
                 
@@ -53,6 +57,8 @@ struct DetailView: View {
                         } else {
                             self.index -= 1
                         }
+                        
+                        UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
                     }
                     .buttonStyle(MainButtonStyle())
                     
@@ -62,6 +68,8 @@ struct DetailView: View {
                         } else {
                             self.index += 1
                         }
+                        
+                        UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
                     }
                     .buttonStyle(MainButtonStyle())
                 }
@@ -69,6 +77,9 @@ struct DetailView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
+        }
+        .onAppear {
+            self.index = UserDefaults.standard.integer(forKey: grade.rawValue)
         }
     }
     

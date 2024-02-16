@@ -9,22 +9,23 @@ import SwiftUI
 
 struct GradeListItemView: View {
     
-    private let title: String
-    private let count: Int
+    @State private var count: Int = 0
+    
+    private let grade: GradeType
+    private let total: Int
     
     init(grade: GradeType) {
-        let characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
-        self.title = grade.title
-        self.count = characters.count
+        self.grade = grade
+        self.total = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade).count
     }
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(self.grade.title)
             
             Spacer()
             
-            Text("\(self.count)개")
+            Text("\(self.count + 1)/\(self.total)")
         }
         .font(.title3)
         .foregroundColor(.white)
@@ -33,6 +34,9 @@ struct GradeListItemView: View {
         .background(
             Capsule().fill(Color.black.opacity(0.75))
         )
+        .onAppear {
+            self.count = UserDefaults.standard.integer(forKey: self.grade.rawValue)
+        }
     }
 }
 
