@@ -15,6 +15,8 @@
 		CB9169D32B7FC40400625D5A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CB9169D22B7FC40400625D5A /* ComposableArchitecture */; };
 		CB9169D52B7FC77B00625D5A /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CB9169D42B7FC77B00625D5A /* characters.json */; };
 		CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */; };
+		CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB9169DA2B7FD65400625D5A /* main_nico.mp3 */; };
+		CB9169DD2B7FD69E00625D5A /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */; };
 		CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3A72B7FB6E700975852 /* kanjiApp.swift */; };
 		CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB92A3AB2B7FB6E800975852 /* Assets.xcassets */; };
 		CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB92A3AE2B7FB6E800975852 /* Preview Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		CB9169CF2B7FC17300625D5A /* CharacterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDTO.swift; sourceTree = "<group>"; };
 		CB9169D42B7FC77B00625D5A /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
+		CB9169DA2B7FD65400625D5A /* main_nico.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_nico.mp3; sourceTree = "<group>"; };
+		CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		CB92A3A42B7FB6E700975852 /* kanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB92A3A72B7FB6E700975852 /* kanjiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiApp.swift; sourceTree = "<group>"; };
 		CB92A3AB2B7FB6E800975852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			children = (
 				CB92A3AB2B7FB6E800975852 /* Assets.xcassets */,
 				CB9169D42B7FC77B00625D5A /* characters.json */,
+				CB9169DA2B7FD65400625D5A /* main_nico.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -136,12 +141,13 @@
 			path = Type;
 			sourceTree = "<group>";
 		};
-		CB9169CB2B7FC08900625D5A /* Storage */ = {
+		CB9169CB2B7FC08900625D5A /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				CB9169CC2B7FC09A00625D5A /* CharacterStorage.swift */,
+				CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */,
 			);
-			path = Storage;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		CB9169D62B7FD44E00625D5A /* Common */ = {
@@ -183,10 +189,10 @@
 		CB92A3A62B7FB6E700975852 /* kanji */ = {
 			isa = PBXGroup;
 			children = (
-				CB9169CB2B7FC08900625D5A /* Storage */,
 				CB9169BC2B7FB86F00625D5A /* Model */,
 				CB9169C82B7FBE7700625D5A /* Type */,
 				CB9169BD2B7FB89500625D5A /* Screens */,
+				CB9169CB2B7FC08900625D5A /* Util */,
 				CB9169B92B7FB81900625D5A /* Resources */,
 				CB9169B82B7FB80400625D5A /* Supports */,
 				CB92A3AD2B7FB6E800975852 /* Preview Content */,
@@ -329,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */,
 				CB9169D52B7FC77B00625D5A /* characters.json in Resources */,
 				CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */,
 				CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */,
@@ -361,6 +368,7 @@
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,
 				CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */,
+				CB9169DD2B7FD69E00625D5A /* AudioPlayerManager.swift in Sources */,
 				CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */,
 				CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */,
 			);

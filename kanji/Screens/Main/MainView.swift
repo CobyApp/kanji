@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     let characters = CharacterStorage.shared.characters
+    let audioPlayerManager = AudioPlayerManager.shared
     
     var body: some View {
         GeometryReader { geometry in
@@ -24,7 +25,7 @@ struct MainView: View {
                     Spacer()
                     
                     Button("니코랑 공부하기") {
-                        print("니코랑 한자 외우기")
+                        audioPlayerManager.playSound()
                     }
                     .buttonStyle(MainButtonStyle())
                     .padding(.horizontal, 20)

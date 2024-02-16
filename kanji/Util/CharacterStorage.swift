@@ -18,8 +18,9 @@ final class CharacterStorage {
     }
     
     func loadCharacters() {
+        guard let path = Bundle.main.path(forResource: "characters", ofType: "json") else { return }
+        
         do {
-            guard let path = Bundle.main.path(forResource: "characters", ofType: "json") else { return }
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             self.characters = try JSONDecoder().decode([CharacterDTO].self, from: data).map { $0.toCharacter() }
         } catch {
