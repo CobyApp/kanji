@@ -30,6 +30,11 @@ final class AudioPlayerManager {
     }
     
     func playSound() {
+        if self.audioPlayer?.isPlaying == true {
+            self.audioPlayer?.stop()
+            self.audioPlayer?.currentTime = 0
+        }
+        
         self.audioPlayer?.play()
     }
 }

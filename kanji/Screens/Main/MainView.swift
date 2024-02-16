@@ -9,31 +9,34 @@ import SwiftUI
 
 struct MainView: View {
     
-    let characters = CharacterStorage.shared.characters
-    let audioPlayerManager = AudioPlayerManager.shared
+    @State private var state: StateType = .start
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
+        ZStack {
+            GeometryReader { geometry in
                 Image("mainBg")
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .clipped()
-                
-                VStack {
-                    Spacer()
-                    
-                    Button("니코랑 공부하기") {
-                        audioPlayerManager.playSound()
+                    .overlay(
+                        Color.black.opacity(self.state == .start ? 0 : 0.5)
+                    )
+            }
+            .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Group {
+                    switch self.state {
+                    case .start:
+                        StartView(state: self.$state)
+                    case .grade:
+                        GradeView(state: self.$state)
                     }
-                    .buttonStyle(MainButtonStyle())
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 30)
                 }
             }
+            .padding()
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

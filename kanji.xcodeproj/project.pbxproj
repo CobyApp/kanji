@@ -17,6 +17,9 @@
 		CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */; };
 		CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB9169DA2B7FD65400625D5A /* main_nico.mp3 */; };
 		CB9169DD2B7FD69E00625D5A /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */; };
+		CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E02B7FDCB500625D5A /* StartView.swift */; };
+		CB9169E32B7FDD1600625D5A /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E22B7FDD1600625D5A /* GradeView.swift */; };
+		CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E42B7FDE8B00625D5A /* StateType.swift */; };
 		CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3A72B7FB6E700975852 /* kanjiApp.swift */; };
 		CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB92A3AB2B7FB6E800975852 /* Assets.xcassets */; };
 		CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB92A3AE2B7FB6E800975852 /* Preview Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 		CB9169DA2B7FD65400625D5A /* main_nico.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_nico.mp3; sourceTree = "<group>"; };
 		CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		CB9169E02B7FDCB500625D5A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		CB9169E22B7FDD1600625D5A /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
+		CB9169E42B7FDE8B00625D5A /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
 		CB92A3A42B7FB6E700975852 /* kanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB92A3A72B7FB6E700975852 /* kanjiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiApp.swift; sourceTree = "<group>"; };
 		CB92A3AB2B7FB6E800975852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		CB9169C32B7FB96900625D5A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CB9169DF2B7FDC8100625D5A /* Component */,
 				CB9169C42B7FB97300625D5A /* MainView.swift */,
 			);
 			path = Main;
@@ -137,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9169C92B7FBE8A00625D5A /* GradeType.swift */,
+				CB9169E42B7FDE8B00625D5A /* StateType.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -164,6 +172,15 @@
 				CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */,
 			);
 			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		CB9169DF2B7FDC8100625D5A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CB9169E02B7FDCB500625D5A /* StartView.swift */,
+				CB9169E22B7FDD1600625D5A /* GradeView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		CB92A39B2B7FB6E700975852 = {
@@ -363,7 +380,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */,
+				CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */,
 				CB9169C52B7FB97300625D5A /* MainView.swift in Sources */,
+				CB9169E32B7FDD1600625D5A /* GradeView.swift in Sources */,
 				CB9169CD2B7FC09A00625D5A /* CharacterStorage.swift in Sources */,
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,
