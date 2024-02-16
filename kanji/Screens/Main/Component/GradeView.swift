@@ -15,9 +15,10 @@ struct GradeView: View {
         VStack {
             VStack(spacing: 10) {
                 ForEach(GradeType.allCases, id: \.self) { grade in
-                    NavigationLink(
-                        destination: DetailView(grade: grade).navigationBarHidden(true)
-                    ) {
+                    NavigationLink {
+                        DetailView(grade: grade)
+                            .navigationBarHidden(true)
+                    } label: {
                         GradeListItemView(grade: grade)
                     }
                 }

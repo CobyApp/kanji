@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character {
+struct Character: Hashable {
     let grade: GradeType
     let kanji: String
     let korean: String

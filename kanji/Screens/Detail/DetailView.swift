@@ -97,10 +97,19 @@ struct DetailView: View {
             
             Spacer()
             
-            Button("목록") {
+            NavigationLink {
+                GalleryView(grade: grade)
+                    .navigationBarHidden(true)
+            } label: {
+                Text("목록")
+                    .font(.title3)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 80)
+                    .background(
+                        Capsule().fill(Color.black.opacity(0.75))
+                    )
             }
-            .buttonStyle(MainButtonStyle())
-            .frame(width: 80)
         }
     }
     
