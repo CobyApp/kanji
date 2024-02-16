@@ -17,6 +17,16 @@ final class AudioPlayerManager {
     private init() {
         guard let url = Bundle.main.url(forResource: "main_nico", withExtension: "mp3") else { return }
         self.audioPlayer = try? AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+        self.configureAudioSession()
+    }
+    
+    private func configureAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.defaultToSpeaker, .mixWithOthers])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("오디오 세션 설정 실패: \(error)")
+        }
     }
     
     func playSound() {
