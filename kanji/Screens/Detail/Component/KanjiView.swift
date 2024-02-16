@@ -27,7 +27,7 @@ struct KanjiView: View {
                         .fixedSize()
                         .frame(
                             width: geometry.size.width,
-                            height: geometry.size.height * 1.54
+                            height: geometry.size.height * 1.53
                         )
                 }
             )
