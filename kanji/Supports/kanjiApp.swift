@@ -9,21 +9,9 @@ import SwiftUI
 
 @main
 struct kanjiApp: App {
-    
-    @State private var isShowingLaunchScreen = true
-    
     var body: some Scene {
         WindowGroup {
-            if isShowingLaunchScreen {
-                LaunchView()
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            isShowingLaunchScreen = false
-                        }
-                    }
-            } else {
-                MainView()
-            }
+            MainView()
         }
     }
 }
