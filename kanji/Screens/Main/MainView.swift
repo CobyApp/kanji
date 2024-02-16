@@ -37,6 +37,9 @@ struct MainView: View {
             }
             .padding()
         }
+        .onChange(of: self.state) {
+            AudioPlayerManager.shared.playSound()
+        }
     }
 }
 

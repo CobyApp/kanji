@@ -17,7 +17,6 @@ struct StartView: View {
             
             Button("니코랑 공부하기") {
                 self.state = .grade
-                AudioPlayerManager.shared.playSound()
             }
             .buttonStyle(MainButtonStyle())
         }

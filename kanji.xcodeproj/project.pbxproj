@@ -20,6 +20,9 @@
 		CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E02B7FDCB500625D5A /* StartView.swift */; };
 		CB9169E32B7FDD1600625D5A /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E22B7FDD1600625D5A /* GradeView.swift */; };
 		CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E42B7FDE8B00625D5A /* StateType.swift */; };
+		CB9169E82B7FE41800625D5A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169E72B7FE41800625D5A /* DetailView.swift */; };
+		CB9169EB2B7FE46100625D5A /* KanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169EA2B7FE46100625D5A /* KanjiView.swift */; };
+		CB9169ED2B7FEBE100625D5A /* GradeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169EC2B7FEBE100625D5A /* GradeListItemView.swift */; };
 		CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3A72B7FB6E700975852 /* kanjiApp.swift */; };
 		CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB92A3AB2B7FB6E800975852 /* Assets.xcassets */; };
 		CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB92A3AE2B7FB6E800975852 /* Preview Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		CB9169E02B7FDCB500625D5A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CB9169E22B7FDD1600625D5A /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
 		CB9169E42B7FDE8B00625D5A /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
+		CB9169E72B7FE41800625D5A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CB9169EA2B7FE46100625D5A /* KanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiView.swift; sourceTree = "<group>"; };
+		CB9169EC2B7FEBE100625D5A /* GradeListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeListItemView.swift; sourceTree = "<group>"; };
 		CB92A3A42B7FB6E700975852 /* kanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB92A3A72B7FB6E700975852 /* kanjiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiApp.swift; sourceTree = "<group>"; };
 		CB92A3AB2B7FB6E800975852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			children = (
 				CB9169D62B7FD44E00625D5A /* Common */,
 				CB9169C32B7FB96900625D5A /* Main */,
+				CB9169E62B7FE3F000625D5A /* Detail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -179,6 +186,24 @@
 			children = (
 				CB9169E02B7FDCB500625D5A /* StartView.swift */,
 				CB9169E22B7FDD1600625D5A /* GradeView.swift */,
+				CB9169EC2B7FEBE100625D5A /* GradeListItemView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		CB9169E62B7FE3F000625D5A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CB9169E92B7FE44E00625D5A /* Component */,
+				CB9169E72B7FE41800625D5A /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CB9169E92B7FE44E00625D5A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CB9169EA2B7FE46100625D5A /* KanjiView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -381,14 +406,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */,
+				CB9169E82B7FE41800625D5A /* DetailView.swift in Sources */,
 				CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */,
 				CB9169C52B7FB97300625D5A /* MainView.swift in Sources */,
 				CB9169E32B7FDD1600625D5A /* GradeView.swift in Sources */,
 				CB9169CD2B7FC09A00625D5A /* CharacterStorage.swift in Sources */,
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
+				CB9169ED2B7FEBE100625D5A /* GradeListItemView.swift in Sources */,
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,
 				CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */,
 				CB9169DD2B7FD69E00625D5A /* AudioPlayerManager.swift in Sources */,
+				CB9169EB2B7FE46100625D5A /* KanjiView.swift in Sources */,
 				CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */,
 				CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */,
 			);
