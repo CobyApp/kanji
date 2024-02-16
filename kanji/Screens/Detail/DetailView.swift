@@ -38,25 +38,35 @@ struct DetailView: View {
             }
             .edgesIgnoringSafeArea(.all)
             
-            VStack {
+            VStack(spacing: 0) {
                 TopAppbarView()
                 
-                KanjiView(character: self.$characters[self.index])
+                KanjiView(kanji: self.characters[self.index].kanji)
                 
-                Spacer()
+                CharacterInfoView()
                 
                 HStack(spacing: 10) {
-                    Button("이전 한자") {
-                        self.index = 0
+                    Button("이전") {
+                        if self.index == 0 {
+                            self.index = self.characters.count - 1
+                        } else {
+                            self.index -= 1
+                        }
                     }
                     .buttonStyle(MainButtonStyle())
                     
-                    Button("다음 한자") {
-                        self.index = self.characters.count - 1
+                    Button("다음") {
+                        if self.index == self.characters.count - 1 {
+                            self.index = 0
+                        } else {
+                            self.index += 1
+                        }
                     }
                     .buttonStyle(MainButtonStyle())
                 }
+                .padding(.top)
             }
+            .frame(maxWidth: .infinity)
             .padding()
         }
     }
@@ -80,6 +90,68 @@ struct DetailView: View {
             .buttonStyle(MainButtonStyle())
             .frame(width: 80)
         }
+    }
+    
+    @ViewBuilder
+    private func CharacterInfoView() -> some View {
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 24) {
+                VStack(spacing: 12) {
+                    HStack {
+                        Text(self.characters[self.index].korean)
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        Text("\(self.index)/\(self.total)")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Divider()
+                        .background(Color.white)
+                }
+                
+                VStack(spacing: 20) {
+                    HStack(spacing: 12) {
+                        Text("음")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                            .frame(width: 30, height: 30)
+                            .background(Circle().fill(Color.white.opacity(0.75)))
+                        
+                        Text(self.characters[self.index].fullSound)
+                            .font(.title3)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                    }
+                    
+                    HStack(spacing: 12) {
+                        Text("훈")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                            .frame(width: 30, height: 30)
+                            .background(Circle().fill(Color.white.opacity(0.75)))
+                        
+                        Text(self.characters[self.index].fullMeaning)
+                            .font(.title3)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                    }
+                }
+                
+                Spacer()
+            }
+            .padding()
+        }
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.black.opacity(0.75))
+        )
     }
 }
 
