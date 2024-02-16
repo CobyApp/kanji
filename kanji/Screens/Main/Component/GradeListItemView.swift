@@ -24,7 +24,7 @@ struct GradeListItemView: View {
             
             Spacer()
             
-            Text("총 \(self.count)개")
+            Text("\(self.count)개")
         }
         .font(.title3)
         .foregroundColor(.white)

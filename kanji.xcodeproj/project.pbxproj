@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1FE7FD2B7FF0DD00F8E9BE /* CloseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */; };
 		CB9169C52B7FB97300625D5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C42B7FB97300625D5A /* MainView.swift */; };
 		CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C62B7FBE3C00625D5A /* Character.swift */; };
 		CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C92B7FBE8A00625D5A /* GradeType.swift */; };
 		CB9169CD2B7FC09A00625D5A /* CharacterStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169CC2B7FC09A00625D5A /* CharacterStorage.swift */; };
 		CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169CF2B7FC17300625D5A /* CharacterDTO.swift */; };
-		CB9169D32B7FC40400625D5A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CB9169D22B7FC40400625D5A /* ComposableArchitecture */; };
 		CB9169D52B7FC77B00625D5A /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CB9169D42B7FC77B00625D5A /* characters.json */; };
 		CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */; };
 		CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB9169DA2B7FD65400625D5A /* main_nico.mp3 */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonStyle.swift; sourceTree = "<group>"; };
 		CB9169C42B7FB97300625D5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB9169C62B7FBE3C00625D5A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CB9169C92B7FBE8A00625D5A /* GradeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB9169D32B7FC40400625D5A /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */,
+				CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */,
 			);
 			path = ButtonStyle;
 			sourceTree = "<group>";
@@ -284,7 +285,6 @@
 			);
 			name = kanji;
 			packageProductDependencies = (
-				CB9169D22B7FC40400625D5A /* ComposableArchitecture */,
 			);
 			productName = kanji;
 			productReference = CB92A3A42B7FB6E700975852 /* kanji.app */;
@@ -359,7 +359,6 @@
 			);
 			mainGroup = CB92A39B2B7FB6E700975852;
 			packageReferences = (
-				CB9169D12B7FC40400625D5A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = CB92A3A52B7FB6E700975852 /* Products */;
 			projectDirPath = "";
@@ -419,6 +418,7 @@
 				CB9169EB2B7FE46100625D5A /* KanjiView.swift in Sources */,
 				CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */,
 				CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */,
+				CB1FE7FD2B7FF0DD00F8E9BE /* CloseButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,25 +762,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CB9169D12B7FC40400625D5A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CB9169D22B7FC40400625D5A /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CB9169D12B7FC40400625D5A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB92A39C2B7FB6E700975852 /* Project object */;
 }

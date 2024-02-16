@@ -14,6 +14,7 @@ struct MainButtonStyle: ButtonStyle {
             .foregroundColor(.white)
             .padding()
             .frame(maxWidth: .infinity)
+            .frame(height: 50)
             .background(
                 Capsule().fill(Color.black.opacity(0.75))
             )
