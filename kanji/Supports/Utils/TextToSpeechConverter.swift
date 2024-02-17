@@ -16,9 +16,11 @@ class TextToSpeechConverter {
     private init() {}
     
     func speak(text: String) {
-        let speechUtterance = AVSpeechUtterance(string: text)
-        speechUtterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
-        speechUtterance.rate = 0.3
-        speechSynthesizer.speak(speechUtterance)
+        if UserDefaults.standard.object(forKey: "isSpeakerOn") as? Bool ?? true {
+            let speechUtterance = AVSpeechUtterance(string: text)
+            speechUtterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+            speechUtterance.rate = 0.3
+            speechSynthesizer.speak(speechUtterance)
+        }
     }
 }

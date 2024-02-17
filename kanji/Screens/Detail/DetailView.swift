@@ -81,7 +81,7 @@ struct DetailView: View {
             .padding()
         }
         .onAppear {
-            self.index = UserDefaults.standard.integer(forKey: grade.rawValue)
+            self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0
         }
         .onChange(of: self.index) {
             TextToSpeechConverter.shared.speak(text: self.characters[index].fullSound)

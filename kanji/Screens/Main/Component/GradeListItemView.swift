@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GradeListItemView: View {
     
-    @State private var count: Int = 0
+    @State private var index: Int = 0
     
     private let grade: GradeType
     private let total: Int
@@ -25,7 +25,7 @@ struct GradeListItemView: View {
             
             Spacer()
             
-            Text("\(self.count + 1)/\(self.total)")
+            Text("\(self.index + 1)/\(self.total)")
         }
         .font(.ownglyph(size: 20))
         .foregroundColor(.white)
@@ -36,7 +36,7 @@ struct GradeListItemView: View {
             Capsule().fill(Color.black.opacity(0.75))
         )
         .onAppear {
-            self.count = UserDefaults.standard.integer(forKey: self.grade.rawValue)
+            self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0
         }
     }
 }
