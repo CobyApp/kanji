@@ -23,7 +23,7 @@ struct KanjiView: View {
             .overlay(
                 GeometryReader { geometry in
                     Text(self.kanji)
-                        .font(.jkGothic(size: geometry.size.width / 4.4))
+                        .font(.jkMaru(size: geometry.size.width / 4.4))
                         .fixedSize()
                         .frame(
                             width: geometry.size.width,

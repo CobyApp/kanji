@@ -12,6 +12,7 @@
 		CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
+		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
 		CB9169C52B7FB97300625D5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C42B7FB97300625D5A /* MainView.swift */; };
 		CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C62B7FBE3C00625D5A /* Character.swift */; };
 		CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C92B7FBE8A00625D5A /* GradeType.swift */; };
@@ -59,6 +60,7 @@
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
+		CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ownglyph_meetme-Rg.ttf"; sourceTree = "<group>"; };
 		CB9169C42B7FB97300625D5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB9169C62B7FBE3C00625D5A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CB9169C92B7FBE8A00625D5A /* GradeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				CB92A3AB2B7FB6E800975852 /* Assets.xcassets */,
 				CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */,
+				CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */,
 				CB9169D42B7FC77B00625D5A /* characters.json */,
 				CB9169DA2B7FD65400625D5A /* main_nico.mp3 */,
 			);
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */,
+				CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */,
 				CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */,
 				CB9169D52B7FC77B00625D5A /* characters.json in Resources */,
 				CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */,

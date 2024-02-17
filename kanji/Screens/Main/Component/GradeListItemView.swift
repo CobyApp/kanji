@@ -27,7 +27,7 @@ struct GradeListItemView: View {
             
             Text("\(self.count + 1)/\(self.total)")
         }
-        .font(.title3)
+        .font(.ownglyph(size: 20))
         .foregroundColor(.white)
         .padding(.horizontal)
         .frame(maxWidth: .infinity)

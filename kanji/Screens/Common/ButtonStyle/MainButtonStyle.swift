@@ -10,7 +10,7 @@ import SwiftUI
 struct MainButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.title3)
+            .font(.ownglyph(size: 20))
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .frame(height: 50)

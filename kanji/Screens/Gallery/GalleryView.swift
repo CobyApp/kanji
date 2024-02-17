@@ -91,7 +91,7 @@ struct GalleryView: View {
             Spacer()
             
             Text("\(self.grade.title) - 총 \(self.characters.count)자")
-                .font(.title3)
+                .font(.ownglyph(size: 20))
                 .fixedSize()
                 .foregroundColor(.white)
                 .padding(.horizontal)

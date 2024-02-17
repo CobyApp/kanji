@@ -100,7 +100,7 @@ struct DetailView: View {
                     .navigationBarHidden(true)
             } label: {
                 Text("목록")
-                    .font(.title3)
+                    .font(.ownglyph(size: 20))
                     .foregroundColor(.white)
                     .padding(.horizontal)
                     .frame(width: 80, height: 50)
@@ -117,13 +117,13 @@ struct DetailView: View {
             VStack(spacing: 12) {
                 HStack {
                     Text(self.characters[self.index].korean)
-                        .font(.title2)
+                        .font(.ownglyph(size: 24))
                         .foregroundColor(.white)
                     
                     Spacer()
                     
                     Text("\(self.index + 1)/\(self.total)")
-                        .font(.title3)
+                        .font(.ownglyph(size: 20))
                         .foregroundColor(.white)
                 }
                 
@@ -135,13 +135,13 @@ struct DetailView: View {
                 if self.characters[self.index].fullSound != "" {
                     HStack(spacing: 12) {
                         Text("음")
-                            .font(.title3)
+                            .font(.ownglyph(size: 18))
                             .foregroundColor(.black)
                             .frame(width: 30, height: 30)
                             .background(Circle().fill(Color.white.opacity(0.9)))
                         
                         Text(self.characters[self.index].fullSound)
-                            .font(.jkGothic(size: 21))
+                            .font(.jkMaru(size: 21))
                             .foregroundColor(.white)
                         
                         Spacer()
@@ -151,13 +151,13 @@ struct DetailView: View {
                 if self.characters[self.index].fullMeaning != "" {
                     HStack(spacing: 12) {
                         Text("훈")
-                            .font(.title3)
+                            .font(.ownglyph(size: 18))
                             .foregroundColor(.black)
                             .frame(width: 30, height: 30)
                             .background(Circle().fill(Color.white.opacity(0.9)))
                         
                         Text(self.characters[self.index].fullMeaning)
-                            .font(.jkGothic(size: 21))
+                            .font(.jkMaru(size: 21))
                             .foregroundColor(.white)
                         
                         Spacer()

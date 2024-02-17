@@ -8,7 +8,11 @@
 import SwiftUI
 
 extension Font {
-    static func jkGothic(size: CGFloat) -> Font {
+    static func jkMaru(size: CGFloat) -> Font {
         return .custom("JK-Maru-Gothic-M", size: size)
+    }
+    
+    static func ownglyph(size: CGFloat) -> Font {
+        return .custom("Ownglyph_meetme-Rg", size: size)
     }
 }
