@@ -12,14 +12,15 @@ struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var characters: [Character]
-    @State private var index: Int = 0
+    @State private var index: Int
     
     private let grade: GradeType
     private let total: Int
     
-    init(grade: GradeType) {
+    init(grade: GradeType, index: Int) {
         let characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
         self._characters = State(wrappedValue: characters)
+        self._index = State(wrappedValue: index)
         self.grade = grade
         self.total = characters.count
     }
@@ -82,8 +83,15 @@ struct DetailView: View {
         }
         .onAppear {
             self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0
+            TextToSpeechConverter.shared.stopSpeaking()
+            TextToSpeechConverter.shared.speak(text: self.characters[index].fullSound)
+            TextToSpeechConverter.shared.speak(text: self.characters[index].fullMeaning)
+        }
+        .onDisappear {
+            TextToSpeechConverter.shared.stopSpeaking()
         }
         .onChange(of: self.index) {
+            TextToSpeechConverter.shared.stopSpeaking()
             TextToSpeechConverter.shared.speak(text: self.characters[index].fullSound)
             TextToSpeechConverter.shared.speak(text: self.characters[index].fullMeaning)
         }
@@ -118,8 +126,4 @@ struct DetailView: View {
             }
         }
     }
-}
-
-#Preview {
-    DetailView(grade: .two)
 }

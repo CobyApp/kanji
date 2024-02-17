@@ -23,4 +23,8 @@ class TextToSpeechConverter {
             speechSynthesizer.speak(speechUtterance)
         }
     }
+    
+    func stopSpeaking() {
+        speechSynthesizer.stopSpeaking(at: .immediate)
+    }
 }

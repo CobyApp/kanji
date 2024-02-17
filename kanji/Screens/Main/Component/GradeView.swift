@@ -18,7 +18,7 @@ struct GradeView: View {
                     }
                 }
                 .navigationDestination(for: GradeType.self) { grade in
-                    DetailView(grade: grade)
+                    DetailView(grade: grade, index: UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0)
                         .navigationBarHidden(true)
                 }
                 
