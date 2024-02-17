@@ -35,20 +35,58 @@ struct GalleryView: View {
             }
             .edgesIgnoringSafeArea(.all)
             
+            VStack {
+                TopAppbarView()
+                
+                Spacer()
+            }
+            .padding()
+            .zIndex(1)
+            
             ScrollView {
-                LazyVGrid(columns: self.columns, spacing: 10) {
-                    ForEach(Array(self.characters.enumerated()), id: \.element) { index, character in
-                        GalleryListItemView(kanji: character.kanji)
-                            .scaledToFit()
-                            .onTapGesture {
-                                UserDefaults.standard.set(index, forKey: self.grade.rawValue)
-                                self.dismiss()
-                            }
+                VStack {
+                    LazyVGrid(columns: self.columns, spacing: 10) {
+                        ForEach(Array(self.characters.enumerated()), id: \.element) { index, character in
+                            GalleryListItemView(kanji: character.kanji)
+                                .scaledToFit()
+                                .onTapGesture {
+                                    UserDefaults.standard.set(index, forKey: self.grade.rawValue)
+                                    self.dismiss()
+                                }
+                        }
                     }
+                    .padding(.horizontal)
+                    .padding(.top, 100)
                 }
-                .padding(.horizontal)
             }
             .frame(maxWidth: .infinity)
+            .zIndex(0)
+        }
+    }
+    
+    @ViewBuilder
+    private func TopAppbarView() -> some View {
+        HStack(alignment: .center) {
+            Button {
+                self.dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .foregroundColor(.white)
+            }
+            .frame(width: 50, height: 50)
+            .background(Circle().fill(Color.black.opacity(0.75)))
+            
+            Spacer()
+            
+            Text("\(self.grade.title) - 총 \(self.characters.count)자")
+                .font(.title3)
+                .fixedSize()
+                .foregroundColor(.white)
+                .padding(.horizontal)
+                .frame(height: 50)
+                .background(
+                    Capsule().fill(Color.black.opacity(0.75))
+                )
         }
     }
 }

@@ -19,7 +19,7 @@ struct GalleryListItemView: View {
         GeometryReader { geometry in
             Text(self.kanji)
                 .font(.system(size: geometry.size.width / 2))
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .fixedSize()
                 .frame(
                     width: geometry.size.width,
@@ -27,7 +27,7 @@ struct GalleryListItemView: View {
                 )
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.black.opacity(0.8))
+                        .fill(Color.white.opacity(0.8))
                 )
         }
     }
