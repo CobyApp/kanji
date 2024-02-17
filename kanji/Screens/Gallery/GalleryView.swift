@@ -67,7 +67,7 @@ struct GalleryView: View {
                         .padding(.bottom)
                     }
                     .onAppear {
-                        value.scrollTo(self.index, anchor: .init(x: 0.0, y: 0.1))
+                        value.scrollTo(self.index, anchor: .init(x: 0.0, y: 0.2))
                     }
                 }
             }
@@ -82,7 +82,7 @@ struct GalleryView: View {
             Button {
                 self.dismiss()
             } label: {
-                Image(systemName: "xmark")
+                Image(systemName: "chevron.left")
                     .foregroundColor(.white)
             }
             .frame(width: 50, height: 50)
