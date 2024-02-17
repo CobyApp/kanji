@@ -57,6 +57,7 @@ struct GalleryView: View {
                     }
                     .padding(.horizontal)
                     .padding(.top, 100)
+                    .padding(.bottom)
                 }
             }
             .frame(maxWidth: .infinity)

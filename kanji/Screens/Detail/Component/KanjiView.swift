@@ -31,6 +31,9 @@ struct KanjiView: View {
                         )
                 }
             )
+            .onTapGesture {
+                AudioPlayerManager.shared.playSound()
+            }
     }
 }
 
