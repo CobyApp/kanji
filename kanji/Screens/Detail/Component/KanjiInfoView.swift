@@ -40,7 +40,7 @@ struct KanjiInfoView: View {
             
             VStack(spacing: 14) {
                 if self.character.fullSound != "" {
-                    HStack(alignment: .top, spacing: 12) {
+                    HStack(spacing: 12) {
                         Text("음")
                             .font(.ownglyph(size: 18))
                             .foregroundColor(.black)
@@ -51,14 +51,13 @@ struct KanjiInfoView: View {
                             .font(.jkMaru(size: 21))
                             .foregroundColor(.white)
                             .lineSpacing(6)
-                            .padding(.top, 5)
                         
                         Spacer()
                     }
                 }
                 
                 if self.character.fullMeaning != "" {
-                    HStack(alignment: .top, spacing: 12) {
+                    HStack(spacing: 12) {
                         Text("훈")
                             .font(.ownglyph(size: 18))
                             .foregroundColor(.black)
@@ -69,7 +68,6 @@ struct KanjiInfoView: View {
                             .font(.jkMaru(size: 21))
                             .foregroundColor(.white)
                             .lineSpacing(6)
-                            .padding(.top, 5)
                         
                         Spacer()
                     }
