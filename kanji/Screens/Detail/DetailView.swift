@@ -46,7 +46,11 @@ struct DetailView: View {
                     .padding([.top, .horizontal], -60)
                     .zIndex(0)
                 
-                CharacterInfoView()
+                KanjiInfoView(
+                    character: self.characters[self.index],
+                    total: self.total,
+                    count: self.index + 1
+                )
                 
                 HStack(spacing: 10) {
                     Button("이전") {
@@ -109,74 +113,6 @@ struct DetailView: View {
                     )
             }
         }
-    }
-    
-    @ViewBuilder
-    private func CharacterInfoView() -> some View {
-        VStack(spacing: 24) {
-            VStack(spacing: 8) {
-                HStack {
-                    Text(self.characters[self.index].korean)
-                        .font(.ownglyph(size: 24))
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    
-                    Text("\(self.index + 1)/\(self.total)")
-                        .font(.ownglyph(size: 20))
-                        .foregroundColor(.white)
-                }
-                
-                Divider()
-                    .background(Color.white)
-            }
-            
-            VStack(spacing: 14) {
-                if self.characters[self.index].fullSound != "" {
-                    HStack(alignment: .top, spacing: 12) {
-                        Text("음")
-                            .font(.ownglyph(size: 18))
-                            .foregroundColor(.black)
-                            .frame(width: 30, height: 30)
-                            .background(Circle().fill(Color.white.opacity(0.9)))
-                        
-                        Text(self.characters[self.index].fullSound)
-                            .font(.jkMaru(size: 21))
-                            .foregroundColor(.white)
-                            .lineSpacing(6)
-                            .padding(.top, 4)
-                        
-                        Spacer()
-                    }
-                }
-                
-                if self.characters[self.index].fullMeaning != "" {
-                    HStack(alignment: .top, spacing: 12) {
-                        Text("훈")
-                            .font(.ownglyph(size: 18))
-                            .foregroundColor(.black)
-                            .frame(width: 30, height: 30)
-                            .background(Circle().fill(Color.white.opacity(0.9)))
-                        
-                        Text(self.characters[self.index].fullMeaning)
-                            .font(.jkMaru(size: 21))
-                            .foregroundColor(.white)
-                            .lineSpacing(6)
-                            .padding(.top, 4)
-                        
-                        Spacer()
-                    }
-                }
-            }
-            
-            Spacer()
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.black.opacity(0.8))
-        )
     }
 }
 
