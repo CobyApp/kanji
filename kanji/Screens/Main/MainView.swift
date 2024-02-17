@@ -22,11 +22,6 @@ struct MainView: View {
                     .overlay(
                         Color.black.opacity(self.state == .start ? 0 : 0.5)
                     )
-                    .onTapGesture {
-                        if self.state == .start {
-                            AudioPlayerManager.shared.playSound()
-                        }
-                    }
             }
             .edgesIgnoringSafeArea(.all)
             
