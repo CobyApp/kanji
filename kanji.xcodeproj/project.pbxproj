@@ -10,6 +10,8 @@
 		CB1FE7FD2B7FF0DD00F8E9BE /* CloseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */; };
 		CB1FE8002B8011D700F8E9BE /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */; };
 		CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */; };
+		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
+		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB9169C52B7FB97300625D5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C42B7FB97300625D5A /* MainView.swift */; };
 		CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C62B7FBE3C00625D5A /* Character.swift */; };
 		CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C92B7FBE8A00625D5A /* GradeType.swift */; };
@@ -54,6 +56,9 @@
 		CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonStyle.swift; sourceTree = "<group>"; };
 		CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListItemView.swift; sourceTree = "<group>"; };
+		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
 		CB9169C42B7FB97300625D5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB9169C62B7FBE3C00625D5A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CB9169C92B7FBE8A00625D5A /* GradeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
@@ -122,9 +127,19 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		CB81756A2B80B960007DDE1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB81756B2B80B978007DDE1D /* Font+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CB9169B82B7FB80400625D5A /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				CB9169CB2B7FC08900625D5A /* Utils */,
+				CB81756A2B80B960007DDE1D /* Extensions */,
 				CB92A3A72B7FB6E700975852 /* kanjiApp.swift */,
 			);
 			path = Supports;
@@ -134,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				CB92A3AB2B7FB6E800975852 /* Assets.xcassets */,
+				CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */,
 				CB9169D42B7FC77B00625D5A /* characters.json */,
 				CB9169DA2B7FD65400625D5A /* main_nico.mp3 */,
 			);
@@ -178,13 +194,13 @@
 			path = Type;
 			sourceTree = "<group>";
 		};
-		CB9169CB2B7FC08900625D5A /* Util */ = {
+		CB9169CB2B7FC08900625D5A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				CB9169CC2B7FC09A00625D5A /* CharacterStorage.swift */,
 				CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */,
 			);
-			path = Util;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CB9169D62B7FD44E00625D5A /* Common */ = {
@@ -254,10 +270,10 @@
 		CB92A3A62B7FB6E700975852 /* kanji */ = {
 			isa = PBXGroup;
 			children = (
+				CB8175692B80B91B007DDE1D /* Info.plist */,
 				CB9169BC2B7FB86F00625D5A /* Model */,
 				CB9169C82B7FBE7700625D5A /* Type */,
 				CB9169BD2B7FB89500625D5A /* Screens */,
-				CB9169CB2B7FC08900625D5A /* Util */,
 				CB9169B92B7FB81900625D5A /* Resources */,
 				CB9169B82B7FB80400625D5A /* Supports */,
 				CB92A3AD2B7FB6E800975852 /* Preview Content */,
@@ -399,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */,
+				CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */,
 				CB9169D52B7FC77B00625D5A /* characters.json in Resources */,
 				CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */,
 				CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */,
@@ -426,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */,
 				CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */,
 				CB9169E82B7FE41800625D5A /* DetailView.swift in Sources */,
 				CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */,
@@ -611,6 +629,8 @@
 				DEVELOPMENT_TEAM = 3Y8YH8GWMM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kanji/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "니코니코니";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -646,6 +666,8 @@
 				DEVELOPMENT_TEAM = 3Y8YH8GWMM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kanji/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "니코니코니";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

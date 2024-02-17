@@ -18,7 +18,7 @@ struct GalleryListItemView: View {
     var body: some View {
         GeometryReader { geometry in
             Text(self.kanji)
-                .font(.system(size: geometry.size.width / 2))
+                .font(.jkGothic(size: geometry.size.width / 2))
                 .foregroundColor(.black)
                 .fixedSize()
                 .frame(

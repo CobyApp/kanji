@@ -141,7 +141,7 @@ struct DetailView: View {
                             .background(Circle().fill(Color.white.opacity(0.9)))
                         
                         Text(self.characters[self.index].fullSound)
-                            .font(.title3)
+                            .font(.jkGothic(size: 21))
                             .foregroundColor(.white)
                         
                         Spacer()
@@ -157,7 +157,7 @@ struct DetailView: View {
                             .background(Circle().fill(Color.white.opacity(0.9)))
                         
                         Text(self.characters[self.index].fullMeaning)
-                            .font(.title3)
+                            .font(.jkGothic(size: 21))
                             .foregroundColor(.white)
                         
                         Spacer()
