@@ -12,7 +12,6 @@ struct MainButtonStyle: ButtonStyle {
         configuration.label
             .font(.title3)
             .foregroundColor(.white)
-            .padding()
             .frame(maxWidth: .infinity)
             .frame(height: 50)
             .background(

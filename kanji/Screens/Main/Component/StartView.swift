@@ -19,7 +19,9 @@ struct StartView: View {
                 self.state = .grade
             }
             .buttonStyle(MainButtonStyle())
+            .padding()
         }
+        .frame(maxWidth: .infinity)
     }
 }
 

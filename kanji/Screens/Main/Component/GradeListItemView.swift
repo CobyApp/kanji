@@ -29,8 +29,9 @@ struct GradeListItemView: View {
         }
         .font(.title3)
         .foregroundColor(.white)
-        .padding()
+        .padding(.horizontal)
         .frame(maxWidth: .infinity)
+        .frame(height: 50)
         .background(
             Capsule().fill(Color.black.opacity(0.75))
         )

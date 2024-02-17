@@ -11,7 +11,7 @@ import SwiftUI
 struct kanjiApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationStack {
                 MainView()
             }
         }

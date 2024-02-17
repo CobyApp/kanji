@@ -104,8 +104,8 @@ struct DetailView: View {
                 Text("목록")
                     .font(.title3)
                     .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 80)
+                    .padding(.horizontal)
+                    .frame(width: 80, height: 50)
                     .background(
                         Capsule().fill(Color.black.opacity(0.75))
                     )

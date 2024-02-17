@@ -25,17 +25,14 @@ struct MainView: View {
             }
             .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                Group {
-                    switch self.state {
-                    case .start:
-                        StartView(state: self.$state)
-                    case .grade:
-                        GradeView(state: self.$state)
-                    }
+            Group {
+                switch self.state {
+                case .start:
+                    StartView(state: self.$state)
+                case .grade:
+                    GradeView(state: self.$state)
                 }
             }
-            .padding()
         }
         .onAppear {
             if self.state == .start {
