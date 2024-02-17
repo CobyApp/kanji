@@ -14,6 +14,7 @@
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
 		CB8175772B80CCBB007DDE1D /* KanjiInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8175762B80CCBB007DDE1D /* KanjiInfoView.swift */; };
+		CB8175792B80D191007DDE1D /* TextToSpeechConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8175782B80D191007DDE1D /* TextToSpeechConverter.swift */; };
 		CB9169C52B7FB97300625D5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C42B7FB97300625D5A /* MainView.swift */; };
 		CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C62B7FBE3C00625D5A /* Character.swift */; };
 		CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9169C92B7FBE8A00625D5A /* GradeType.swift */; };
@@ -63,6 +64,7 @@
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
 		CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ownglyph_meetme-Rg.ttf"; sourceTree = "<group>"; };
 		CB8175762B80CCBB007DDE1D /* KanjiInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiInfoView.swift; sourceTree = "<group>"; };
+		CB8175782B80D191007DDE1D /* TextToSpeechConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechConverter.swift; sourceTree = "<group>"; };
 		CB9169C42B7FB97300625D5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB9169C62B7FBE3C00625D5A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CB9169C92B7FBE8A00625D5A /* GradeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				CB9169CC2B7FC09A00625D5A /* CharacterStorage.swift */,
 				CB9169DC2B7FD69E00625D5A /* AudioPlayerManager.swift */,
+				CB8175782B80D191007DDE1D /* TextToSpeechConverter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			files = (
 				CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */,
 				CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */,
+				CB8175792B80D191007DDE1D /* TextToSpeechConverter.swift in Sources */,
 				CB9169E82B7FE41800625D5A /* DetailView.swift in Sources */,
 				CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */,
 				CB9169C52B7FB97300625D5A /* MainView.swift in Sources */,

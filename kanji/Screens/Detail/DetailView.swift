@@ -83,6 +83,10 @@ struct DetailView: View {
         .onAppear {
             self.index = UserDefaults.standard.integer(forKey: grade.rawValue)
         }
+        .onChange(of: self.index) {
+            TextToSpeechConverter.shared.speak(text: self.characters[index].fullSound)
+            TextToSpeechConverter.shared.speak(text: self.characters[index].fullMeaning)
+        }
     }
     
     @ViewBuilder
