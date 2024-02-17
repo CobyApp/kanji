@@ -15,7 +15,7 @@ struct StartView: View {
         VStack {
             Spacer()
             
-            Button("니코랑 공부하기") {
+            Button("니코짱과 공부하기") {
                 self.state = .grade
             }
             .buttonStyle(MainButtonStyle())

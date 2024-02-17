@@ -21,8 +21,8 @@ extension CharacterDTO {
             grade: self.gradeType,
             kanji: self.kanji,
             korean: self.korean,
-            sounds: self.sound.components(separatedBy: ","),
-            meanings: self.meaning.components(separatedBy: ",")
+            sounds: self.sounds,
+            meanings: self.meanings
         )
     }
     
@@ -42,6 +42,22 @@ extension CharacterDTO {
             return .six
         default:
             return .mid
+        }
+    }
+    
+    var sounds: [String] {
+        if self.sound == "無し" {
+            return []
+        } else {
+            return self.sound.components(separatedBy: ",")
+        }
+    }
+    
+    var meanings: [String] {
+        if self.meaning == "無し" {
+            return []
+        } else {
+            return self.meaning.components(separatedBy: ",")
         }
     }
 }

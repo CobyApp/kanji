@@ -12,16 +12,14 @@ struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var characters: [Character]
-    @State private var index: Int
+    @State private var index: Int = 0
     
     private let grade: GradeType
     private let total: Int
     
     init(grade: GradeType) {
         let characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
-        let index = UserDefaults.standard.integer(forKey: grade.rawValue)
         self._characters = State(wrappedValue: characters)
-        self._index = State(wrappedValue: index)
         self.grade = grade
         self.total = characters.count
     }
@@ -98,7 +96,7 @@ struct DetailView: View {
             Spacer()
             
             NavigationLink {
-                GalleryView(grade: grade)
+                GalleryView(grade: grade, index: self.index)
                     .navigationBarHidden(true)
             } label: {
                 Text("목록")
@@ -134,32 +132,36 @@ struct DetailView: View {
             }
             
             VStack(spacing: 20) {
-                HStack(spacing: 12) {
-                    Text("음")
-                        .font(.title3)
-                        .foregroundColor(.black)
-                        .frame(width: 30, height: 30)
-                        .background(Circle().fill(Color.white.opacity(0.9)))
-                    
-                    Text(self.characters[self.index].fullSound)
-                        .font(.title3)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
+                if self.characters[self.index].fullSound != "" {
+                    HStack(spacing: 12) {
+                        Text("음")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                            .frame(width: 30, height: 30)
+                            .background(Circle().fill(Color.white.opacity(0.9)))
+                        
+                        Text(self.characters[self.index].fullSound)
+                            .font(.title3)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                    }
                 }
                 
-                HStack(spacing: 12) {
-                    Text("훈")
-                        .font(.title3)
-                        .foregroundColor(.black)
-                        .frame(width: 30, height: 30)
-                        .background(Circle().fill(Color.white.opacity(0.9)))
-                    
-                    Text(self.characters[self.index].fullMeaning)
-                        .font(.title3)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
+                if self.characters[self.index].fullMeaning != "" {
+                    HStack(spacing: 12) {
+                        Text("훈")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                            .frame(width: 30, height: 30)
+                            .background(Circle().fill(Color.white.opacity(0.9)))
+                        
+                        Text(self.characters[self.index].fullMeaning)
+                            .font(.title3)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                    }
                 }
             }
             

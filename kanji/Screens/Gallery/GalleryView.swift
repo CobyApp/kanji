@@ -12,12 +12,14 @@ struct GalleryView: View {
     @Environment(\.dismiss) private var dismiss
     
     private let grade: GradeType
+    private let index: Int
     private let characters: [Character]
     
     private let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
-    init(grade: GradeType) {
+    init(grade: GradeType, index: Int) {
         self.grade = grade
+        self.index = index
         self.characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
     }
     
@@ -44,20 +46,29 @@ struct GalleryView: View {
             .zIndex(1)
             
             ScrollView {
-                VStack {
-                    LazyVGrid(columns: self.columns, spacing: 10) {
-                        ForEach(Array(self.characters.enumerated()), id: \.element) { index, character in
-                            GalleryListItemView(kanji: character.kanji)
-                                .scaledToFit()
-                                .onTapGesture {
-                                    UserDefaults.standard.set(index, forKey: self.grade.rawValue)
-                                    self.dismiss()
-                                }
+                ScrollViewReader { value in
+                    VStack {
+                        LazyVGrid(columns: self.columns, spacing: 10) {
+                            ForEach(Array(self.characters.enumerated()), id: \.element) { index, character in
+                                GalleryListItemView(kanji: character.kanji)
+                                    .overlay(
+                                        Color.black.opacity(index <= self.index ? 0.3 : 0)
+                                    )
+                                    .scaledToFit()
+                                    .onTapGesture {
+                                        UserDefaults.standard.set(index, forKey: self.grade.rawValue)
+                                        self.dismiss()
+                                    }
+                                    .id(index)
+                            }
                         }
+                        .padding(.horizontal)
+                        .padding(.top, 80)
+                        .padding(.bottom)
                     }
-                    .padding(.horizontal)
-                    .padding(.top, 100)
-                    .padding(.bottom)
+                    .onAppear {
+                        value.scrollTo(self.index, anchor: .init(x: 0.0, y: 0.1))
+                    }
                 }
             }
             .frame(maxWidth: .infinity)
@@ -90,8 +101,4 @@ struct GalleryView: View {
                 )
         }
     }
-}
-
-#Preview {
-    GalleryView(grade: .all)
 }
