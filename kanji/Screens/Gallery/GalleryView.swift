@@ -84,9 +84,9 @@ struct GalleryView: View {
             } label: {
                 Image(systemName: "chevron.left")
                     .foregroundColor(.white)
+                    .frame(width: 50, height: 50)
+                    .background(Circle().fill(Color.black.opacity(0.75)))
             }
-            .frame(width: 50, height: 50)
-            .background(Circle().fill(Color.black.opacity(0.75)))
             
             Spacer()
             
