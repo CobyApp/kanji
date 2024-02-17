@@ -20,7 +20,6 @@ struct GalleryListItemView: View {
             Text(self.kanji)
                 .font(.jkMaru(size: geometry.size.width / 2))
                 .foregroundColor(.black)
-                .fixedSize()
                 .frame(
                     width: geometry.size.width,
                     height: geometry.size.height

@@ -114,7 +114,7 @@ struct DetailView: View {
     @ViewBuilder
     private func CharacterInfoView() -> some View {
         VStack(spacing: 24) {
-            VStack(spacing: 12) {
+            VStack(spacing: 8) {
                 HStack {
                     Text(self.characters[self.index].korean)
                         .font(.ownglyph(size: 24))
@@ -131,9 +131,9 @@ struct DetailView: View {
                     .background(Color.white)
             }
             
-            VStack(spacing: 20) {
+            VStack(spacing: 14) {
                 if self.characters[self.index].fullSound != "" {
-                    HStack(spacing: 12) {
+                    HStack(alignment: .top, spacing: 12) {
                         Text("음")
                             .font(.ownglyph(size: 18))
                             .foregroundColor(.black)
@@ -143,13 +143,15 @@ struct DetailView: View {
                         Text(self.characters[self.index].fullSound)
                             .font(.jkMaru(size: 21))
                             .foregroundColor(.white)
+                            .lineSpacing(6)
+                            .padding(.top, 4)
                         
                         Spacer()
                     }
                 }
                 
                 if self.characters[self.index].fullMeaning != "" {
-                    HStack(spacing: 12) {
+                    HStack(alignment: .top, spacing: 12) {
                         Text("훈")
                             .font(.ownglyph(size: 18))
                             .foregroundColor(.black)
@@ -159,6 +161,8 @@ struct DetailView: View {
                         Text(self.characters[self.index].fullMeaning)
                             .font(.jkMaru(size: 21))
                             .foregroundColor(.white)
+                            .lineSpacing(6)
+                            .padding(.top, 4)
                         
                         Spacer()
                     }

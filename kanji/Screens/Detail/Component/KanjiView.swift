@@ -24,7 +24,6 @@ struct KanjiView: View {
                 GeometryReader { geometry in
                     Text(self.kanji)
                         .font(.jkMaru(size: geometry.size.width / 4.4))
-                        .fixedSize()
                         .frame(
                             width: geometry.size.width,
                             height: geometry.size.height * 1.53
