@@ -13,6 +13,8 @@ struct Character: Hashable {
     let korean: String
     let sounds: [String]
     let meanings: [String]
+    let words1: [WordItem]
+    let words2: [WordItem]
 }
 
 extension Character {
@@ -33,4 +35,9 @@ extension [Character] {
             return self.filter { $0.grade == grade }
         }
     }
+}
+
+struct WordItem: Hashable {
+    let word: String
+    let mean: String
 }

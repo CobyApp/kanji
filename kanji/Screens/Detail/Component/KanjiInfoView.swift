@@ -20,61 +20,100 @@ struct KanjiInfoView: View {
     }
     
     var body: some View {
-        VStack(spacing: 24) {
-            VStack(spacing: 8) {
-                HStack {
-                    Text(self.character.korean)
-                        .font(.ownglyph(size: 24))
-                        .foregroundColor(.white)
+        ScrollView {
+            VStack(spacing: 24) {
+                VStack(spacing: 8) {
+                    HStack {
+                        Text(self.character.korean)
+                            .font(.ownglyph(size: 24))
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        Text("\(self.count)/\(self.total)")
+                            .font(.ownglyph(size: 20))
+                            .foregroundColor(.white)
+                    }
                     
-                    Spacer()
+                    Divider()
+                        .background(Color.white)
+                }
+                
+                VStack(spacing: 14) {
+                    if self.character.fullSound != "" {
+                        HStack(spacing: 12) {
+                            Text("음")
+                                .font(.ownglyph(size: 18))
+                                .foregroundColor(.black)
+                                .frame(width: 30, height: 30)
+                                .background(Circle().fill(Color.white.opacity(0.9)))
+                            
+                            Text(self.character.fullSound)
+                                .font(.jkMaru(size: 21))
+                                .foregroundColor(.white)
+                                .lineSpacing(6)
+                            
+                            Spacer()
+                        }
+                    }
                     
-                    Text("\(self.count)/\(self.total)")
-                        .font(.ownglyph(size: 20))
-                        .foregroundColor(.white)
+                    if self.character.fullMeaning != "" {
+                        HStack(spacing: 12) {
+                            Text("훈")
+                                .font(.ownglyph(size: 18))
+                                .foregroundColor(.black)
+                                .frame(width: 30, height: 30)
+                                .background(Circle().fill(Color.white.opacity(0.9)))
+                            
+                            Text(self.character.fullMeaning)
+                                .font(.jkMaru(size: 21))
+                                .foregroundColor(.white)
+                                .lineSpacing(6)
+                            
+                            Spacer()
+                        }
+                    }
                 }
                 
                 Divider()
                     .background(Color.white)
-            }
-            
-            VStack(spacing: 14) {
-                if self.character.fullSound != "" {
-                    HStack(spacing: 12) {
-                        Text("음")
-                            .font(.ownglyph(size: 18))
-                            .foregroundColor(.black)
-                            .frame(width: 30, height: 30)
-                            .background(Circle().fill(Color.white.opacity(0.9)))
-                        
-                        Text(self.character.fullSound)
-                            .font(.jkMaru(size: 21))
-                            .foregroundColor(.white)
-                            .lineSpacing(6)
-                        
-                        Spacer()
+                
+                VStack(spacing: 12) {
+                    ForEach(self.character.words1, id: \.self) { wordItem in
+                        HStack(spacing: 12) {
+                            Text(wordItem.word)
+                                .font(.jkMaru(size: 17))
+                                .foregroundColor(.white)
+                                .lineSpacing(6)
+                            
+                            Text(wordItem.mean)
+                                .font(.ownglyph(size: 17))
+                                .foregroundColor(.white)
+                                .lineSpacing(6)
+                            
+                            Spacer()
+                        }
+                    }
+                    
+                    ForEach(self.character.words2, id: \.self) { wordItem in
+                        HStack(spacing: 12) {
+                            Text(wordItem.word)
+                                .font(.jkMaru(size: 17))
+                                .foregroundColor(.white)
+                                .lineSpacing(6)
+                            
+                            Text(wordItem.mean)
+                                .font(.ownglyph(size: 17))
+                                .foregroundColor(.white)
+                                .lineSpacing(6)
+                            
+                            Spacer()
+                        }
                     }
                 }
                 
-                if self.character.fullMeaning != "" {
-                    HStack(spacing: 12) {
-                        Text("훈")
-                            .font(.ownglyph(size: 18))
-                            .foregroundColor(.black)
-                            .frame(width: 30, height: 30)
-                            .background(Circle().fill(Color.white.opacity(0.9)))
-                        
-                        Text(self.character.fullMeaning)
-                            .font(.jkMaru(size: 21))
-                            .foregroundColor(.white)
-                            .lineSpacing(6)
-                        
-                        Spacer()
-                    }
-                }
+                Spacer()
             }
-            
-            Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity)

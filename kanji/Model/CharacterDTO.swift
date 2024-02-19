@@ -11,8 +11,10 @@ struct CharacterDTO: Decodable {
     let grade: String
     let kanji: String
     let korean: String
-    let sound: String
-    let meaning: String
+    let sound: String?
+    let meaning: String?
+    let word1: String?
+    let word2: String?
 }
 
 extension CharacterDTO {
@@ -22,23 +24,25 @@ extension CharacterDTO {
             kanji: self.kanji,
             korean: self.korean,
             sounds: self.sounds,
-            meanings: self.meanings
+            meanings: self.meanings,
+            words1: self.words1,
+            words2: self.words2
         )
     }
     
     var gradeType: GradeType {
         switch self.grade {
-        case "소학교1학년":
+        case "초등학교 1학년":
             return .one
-        case "소학교2학년":
+        case "초등학교 2학년":
             return .two
-        case "소학교3학년":
+        case "초등학교 3학년":
             return .three
-        case "소학교4학년":
+        case "초등학교 4학년":
             return .four
-        case "소학교5학년":
+        case "초등학교 5학년":
             return .five
-        case "소학교6학년":
+        case "초등학교 6학년":
             return .six
         default:
             return .mid
@@ -46,18 +50,42 @@ extension CharacterDTO {
     }
     
     var sounds: [String] {
-        if self.sound == "無し" {
-            return []
-        } else {
-            return self.sound.components(separatedBy: ",")
-        }
+        guard let sound = self.sound else { return [] }
+        return sound.components(separatedBy: ",")
     }
     
     var meanings: [String] {
-        if self.meaning == "無し" {
-            return []
-        } else {
-            return self.meaning.components(separatedBy: ",")
+        guard let meaning = self.meaning else { return [] }
+        return meaning.components(separatedBy: ",")
+    }
+    
+    var word1s: [String] {
+        guard let word1 = self.word1 else { return [] }
+        return word1.components(separatedBy: "&")
+    }
+    
+    var word2s: [String] {
+        guard let word1 = self.word2 else { return [] }
+        return word1.components(separatedBy: "&")
+    }
+    
+    var words1: [WordItem] {
+        self.word1s.map {
+            let words = $0.components(separatedBy: "] ")
+            return WordItem(
+                word: "\(words.first ?? "")]",
+                mean: "\(words.last ?? "")"
+            )
+        }
+    }
+    
+    var words2: [WordItem] {
+        self.word2s.map {
+            let words = $0.components(separatedBy: "] ")
+            return WordItem(
+                word: "\(words.first ?? "")]",
+                mean: "\(words.last ?? "")"
+            )
         }
     }
 }
