@@ -21,35 +21,33 @@ struct KanjiInfoView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 24) {
-                VStack(spacing: 8) {
-                    HStack {
-                        Text(self.character.korean)
-                            .font(.ownglyph(size: 24))
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                        
-                        Text("\(self.count)/\(self.total)")
-                            .font(.ownglyph(size: 20))
-                            .foregroundColor(.white)
-                    }
+            VStack(spacing: 14) {
+                HStack {
+                    Text(self.character.korean)
+                        .font(.ownglyph(size: 21))
+                        .foregroundColor(.white)
                     
-                    Divider()
-                        .background(Color.white)
+                    Spacer()
+                    
+                    Text("\(self.count)/\(self.total)")
+                        .font(.ownglyph(size: 20))
+                        .foregroundColor(.white)
                 }
                 
-                VStack(spacing: 14) {
+                Divider()
+                    .background(Color.white)
+                
+                VStack(spacing: 10) {
                     if self.character.fullSound != "" {
                         HStack(spacing: 12) {
                             Text("음")
-                                .font(.ownglyph(size: 18))
+                                .font(.ownglyph(size: 17))
                                 .foregroundColor(.black)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 24, height: 24)
                                 .background(Circle().fill(Color.white.opacity(0.9)))
                             
                             Text(self.character.fullSound)
-                                .font(.jkMaru(size: 21))
+                                .font(.jkMaru(size: 18))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
                             
@@ -60,13 +58,13 @@ struct KanjiInfoView: View {
                     if self.character.fullMeaning != "" {
                         HStack(spacing: 12) {
                             Text("훈")
-                                .font(.ownglyph(size: 18))
+                                .font(.ownglyph(size: 17))
                                 .foregroundColor(.black)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 24, height: 24)
                                 .background(Circle().fill(Color.white.opacity(0.9)))
                             
                             Text(self.character.fullMeaning)
-                                .font(.jkMaru(size: 21))
+                                .font(.jkMaru(size: 18))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
                             
@@ -78,7 +76,7 @@ struct KanjiInfoView: View {
                 Divider()
                     .background(Color.white)
                 
-                VStack(spacing: 12) {
+                VStack(spacing: 8) {
                     ForEach(self.character.words1, id: \.self) { wordItem in
                         HStack(spacing: 12) {
                             Text(wordItem.word)
@@ -90,6 +88,7 @@ struct KanjiInfoView: View {
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
+                                .padding(.top, 2)
                             
                             Spacer()
                         }
@@ -106,6 +105,7 @@ struct KanjiInfoView: View {
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
+                                .padding(.top, 2)
                             
                             Spacer()
                         }
@@ -114,8 +114,9 @@ struct KanjiInfoView: View {
                 
                 Spacer()
             }
+            .padding(.vertical, 20)
+            .padding(.horizontal)
         }
-        .padding()
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 20)
