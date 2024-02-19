@@ -39,7 +39,7 @@ struct KanjiInfoView: View {
                 
                 VStack(spacing: 10) {
                     if self.character.fullSound != "" {
-                        HStack(spacing: 12) {
+                        HStack(spacing: 10) {
                             Text("음")
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.black)
@@ -56,7 +56,7 @@ struct KanjiInfoView: View {
                     }
                     
                     if self.character.fullMeaning != "" {
-                        HStack(spacing: 12) {
+                        HStack(spacing: 10) {
                             Text("훈")
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.black)
@@ -78,7 +78,7 @@ struct KanjiInfoView: View {
                 
                 VStack(spacing: 8) {
                     ForEach(self.character.words1, id: \.self) { wordItem in
-                        HStack(spacing: 12) {
+                        HStack(spacing: 8) {
                             Text(wordItem.word)
                                 .font(.jkMaru(size: 17))
                                 .foregroundColor(.white)
@@ -95,7 +95,7 @@ struct KanjiInfoView: View {
                     }
                     
                     ForEach(self.character.words2, id: \.self) { wordItem in
-                        HStack(spacing: 12) {
+                        HStack(spacing: 8) {
                             Text(wordItem.word)
                                 .font(.jkMaru(size: 17))
                                 .foregroundColor(.white)
