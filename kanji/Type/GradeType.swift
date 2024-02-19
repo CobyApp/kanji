@@ -8,12 +8,10 @@
 import Foundation
 
 enum GradeType: String, CaseIterable {
-    case all, one, two, three, four, five, six, mid
+    case one, two, three, four, five, six, mid
     
     var title: String {
         switch self {
-        case .all:
-            return "모든 한자"
         case .one:
             return "초등학교 1학년"
         case .two:

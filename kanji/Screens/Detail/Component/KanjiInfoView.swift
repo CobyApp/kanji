@@ -20,7 +20,7 @@ struct KanjiInfoView: View {
     }
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(spacing: 14) {
                 HStack {
                     Text(self.character.korean)

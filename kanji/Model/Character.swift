@@ -29,11 +29,7 @@ extension Character {
 
 extension [Character] {
     func getCharactersByGrade(grade: GradeType) -> [Character] {
-        if grade == .all {
-            return self
-        } else {
-            return self.filter { $0.grade == grade }
-        }
+        self.filter { $0.grade == grade }
     }
 }
 
