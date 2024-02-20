@@ -73,8 +73,10 @@ struct KanjiInfoView: View {
                     }
                 }
                 
-                Divider()
-                    .background(Color.white)
+                if self.character.words1.count + self.character.words2.count > 0 {                    
+                    Divider()
+                        .background(Color.white)
+                }
                 
                 VStack(spacing: 8) {
                     ForEach(self.character.words1, id: \.self) { wordItem in
@@ -88,7 +90,7 @@ struct KanjiInfoView: View {
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
-                                .padding(.top, 3)
+                                .padding(.top, 4)
                             
                             Spacer()
                         }
@@ -105,7 +107,7 @@ struct KanjiInfoView: View {
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
-                                .padding(.top, 3)
+                                .padding(.top, 4)
                             
                             Spacer()
                         }
