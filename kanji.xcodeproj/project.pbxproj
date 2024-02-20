@@ -10,6 +10,7 @@
 		CB1FE7FD2B7FF0DD00F8E9BE /* CloseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */; };
 		CB1FE8002B8011D700F8E9BE /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */; };
 		CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */; };
+		CB2B61982B84D01F0096527A /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CB2B61972B84D01F0096527A /* characters.json */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
@@ -35,7 +36,6 @@
 		CB92A3B92B7FB6E800975852 /* kanjiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3B82B7FB6E800975852 /* kanjiTests.swift */; };
 		CB92A3C32B7FB6E800975852 /* kanjiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3C22B7FB6E800975852 /* kanjiUITests.swift */; };
 		CB92A3C52B7FB6E800975852 /* kanjiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3C42B7FB6E800975852 /* kanjiUITestsLaunchTests.swift */; };
-		CBC2F20F2B83B6F5001D9B9C /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC2F20E2B83B6F5001D9B9C /* characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +59,7 @@
 		CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonStyle.swift; sourceTree = "<group>"; };
 		CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListItemView.swift; sourceTree = "<group>"; };
+		CB2B61972B84D01F0096527A /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		CB92A3BE2B7FB6E800975852 /* kanjiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kanjiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB92A3C22B7FB6E800975852 /* kanjiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiUITests.swift; sourceTree = "<group>"; };
 		CB92A3C42B7FB6E800975852 /* kanjiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CBC2F20E2B83B6F5001D9B9C /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 				CB92A3AB2B7FB6E800975852 /* Assets.xcassets */,
 				CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */,
 				CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */,
-				CBC2F20E2B83B6F5001D9B9C /* characters.json */,
+				CB2B61972B84D01F0096527A /* characters.json */,
 				CB9169DA2B7FD65400625D5A /* main_nico.mp3 */,
 			);
 			path = Resources;
@@ -426,7 +426,7 @@
 				CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */,
 				CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */,
 				CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */,
-				CBC2F20F2B83B6F5001D9B9C /* characters.json in Resources */,
+				CB2B61982B84D01F0096527A /* characters.json in Resources */,
 				CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */,
 				CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */,
 			);

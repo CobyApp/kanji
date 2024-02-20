@@ -88,7 +88,7 @@ struct KanjiInfoView: View {
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
-                                .padding(.top, 2)
+                                .padding(.top, 3)
                             
                             Spacer()
                         }
@@ -105,7 +105,7 @@ struct KanjiInfoView: View {
                                 .font(.ownglyph(size: 17))
                                 .foregroundColor(.white)
                                 .lineSpacing(6)
-                                .padding(.top, 2)
+                                .padding(.top, 3)
                             
                             Spacer()
                         }
