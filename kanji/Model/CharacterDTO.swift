@@ -42,10 +42,8 @@ extension CharacterDTO {
             return .four
         case "초등학교 5학년":
             return .five
-        case "초등학교 6학년":
-            return .six
         default:
-            return .mid
+            return .six
         }
     }
     

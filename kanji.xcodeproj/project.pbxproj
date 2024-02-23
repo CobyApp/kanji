@@ -35,7 +35,7 @@
 		CB92A3B92B7FB6E800975852 /* kanjiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3B82B7FB6E800975852 /* kanjiTests.swift */; };
 		CB92A3C32B7FB6E800975852 /* kanjiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3C22B7FB6E800975852 /* kanjiUITests.swift */; };
 		CB92A3C52B7FB6E800975852 /* kanjiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92A3C42B7FB6E800975852 /* kanjiUITestsLaunchTests.swift */; };
-		CBBDF3E92B850A6500363C5D /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CBBDF3E82B850A6500363C5D /* characters.json */; };
+		CBF6DE572B890D4D0054A7C8 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF6DE562B890D4D0054A7C8 /* characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,7 @@
 		CB92A3BE2B7FB6E800975852 /* kanjiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kanjiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB92A3C22B7FB6E800975852 /* kanjiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiUITests.swift; sourceTree = "<group>"; };
 		CB92A3C42B7FB6E800975852 /* kanjiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CBBDF3E82B850A6500363C5D /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		CBF6DE562B890D4D0054A7C8 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				CB92A3AB2B7FB6E800975852 /* Assets.xcassets */,
+				CBF6DE562B890D4D0054A7C8 /* characters.json */,
 				CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */,
 				CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */,
-				CBBDF3E82B850A6500363C5D /* characters.json */,
 				CB9169DA2B7FD65400625D5A /* main_nico.mp3 */,
 			);
 			path = Resources;
@@ -426,7 +426,7 @@
 				CB9169DB2B7FD65400625D5A /* main_nico.mp3 in Resources */,
 				CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */,
 				CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */,
-				CBBDF3E92B850A6500363C5D /* characters.json in Resources */,
+				CBF6DE572B890D4D0054A7C8 /* characters.json in Resources */,
 				CB92A3AF2B7FB6E800975852 /* Preview Assets.xcassets in Resources */,
 				CB92A3AC2B7FB6E800975852 /* Assets.xcassets in Resources */,
 			);
@@ -654,7 +654,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = coby.nico;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -691,7 +691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = coby.nico;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
