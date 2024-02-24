@@ -1,5 +1,5 @@
 //
-//  GradeListItemView.swift
+//  KanjiListItemView.swift
 //  kanji
 //
 //  Created by Coby on 2/17/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GradeListItemView: View {
+struct KanjiListItemView: View {
     
     @State private var index: Int = 0
     
@@ -42,5 +42,5 @@ struct GradeListItemView: View {
 }
 
 #Preview {
-    GradeListItemView(grade: .two)
+    KanjiListItemView(grade: .two)
 }

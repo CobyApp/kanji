@@ -1,5 +1,5 @@
 //
-//  GradeView.swift
+//  KanjiView.swift
 //  kanji
 //
 //  Created by Coby on 2/17/24.
@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct GradeView: View {
+struct KanjiView: View {
     
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
                 ForEach(GradeType.allCases, id: \.self) { grade in
                     NavigationLink(value: grade) {
-                        GradeListItemView(grade: grade)
+                        KanjiListItemView(grade: grade)
                     }
                 }
                 .navigationDestination(for: GradeType.self) { grade in
-                    DetailView(grade: grade, index: UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0)
+                    KanjiDetailView(grade: grade)
                         .navigationBarHidden(true)
                 }
                 
@@ -33,5 +33,5 @@ struct GradeView: View {
 }
 
 #Preview {
-    GradeView()
+    KanjiView()
 }

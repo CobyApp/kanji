@@ -13,11 +13,11 @@ struct StartView: View {
     @Binding var state: StateType
     
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             Spacer()
             
-            Button("니코짱과 공부하기") {
-                self.state = .grade
+            Button("한자 공부하기") {
+                self.state = .kanji
                 
                 if let scene = UIApplication.shared.connectedScenes
                     .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -25,8 +25,13 @@ struct StartView: View {
                 }
             }
             .buttonStyle(MainButtonStyle())
-            .padding()
+            
+            Button("한자 뜻음 퀴즈") {
+                self.state = .korean
+            }
+            .buttonStyle(MainButtonStyle())
         }
+        .padding()
         .frame(maxWidth: .infinity)
     }
 }

@@ -38,8 +38,10 @@ struct MainView: View {
                 switch self.state {
                 case .start:
                     StartView(state: self.$state)
-                case .grade:
-                    GradeView()
+                case .kanji:
+                    KanjiView()
+                case .korean:
+                    KoreanView()
                 }
             }
             .zIndex(0)
@@ -63,7 +65,16 @@ struct MainView: View {
                         .frame(width: 50, height: 50)
                         .background(Circle().fill(Color.black.opacity(0.75)))
                 }
-            case .grade:
+            case .kanji:
+                Button {
+                    self.state = .start
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .frame(width: 50, height: 50)
+                        .background(Circle().fill(Color.black.opacity(0.75)))
+                }
+            case .korean:
                 Button {
                     self.state = .start
                 } label: {

@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  KanjiDetailView.swift
 //  kanji
 //
 //  Created by Coby on 2/17/24.
@@ -7,22 +7,21 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct KanjiDetailView: View {
     
     @Environment(\.dismiss) private var dismiss
     
     @State private var characters: [Character]
-    @State private var index: Int
+    @State private var index: Int = 0
     
     private let grade: GradeType
     private let total: Int
     
     private let tts: TextToSpeechConverter = TextToSpeechConverter.shared
     
-    init(grade: GradeType, index: Int) {
+    init(grade: GradeType) {
         let characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
         self._characters = State(wrappedValue: characters)
-        self._index = State(wrappedValue: index)
         self.grade = grade
         self.total = characters.count
     }
@@ -45,7 +44,7 @@ struct DetailView: View {
                 VStack(spacing: 16) {
                     TopAppbarView()
                     
-                    KanjiView(kanji: self.characters[self.index].kanji)
+                    KanjiBoardView(kanji: self.characters[self.index].kanji)
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
                         .padding(.bottom)
                     

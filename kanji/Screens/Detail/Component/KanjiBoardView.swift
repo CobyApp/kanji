@@ -1,5 +1,5 @@
 //
-//  KanjiView.swift
+//  KanjiBoardView.swift
 //  kanji
 //
 //  Created by Coby on 2/17/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KanjiView: View {
+struct KanjiBoardView: View {
     
     private let kanji: String
     
@@ -33,7 +33,7 @@ struct KanjiView: View {
 
 #Preview {
     VStack {
-        KanjiView(kanji: "家")
+        KanjiBoardView(kanji: "家")
             .background(Color.blue)
     }
 }
