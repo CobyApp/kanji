@@ -1,13 +1,13 @@
 //
-//  KanjiGalleryView.swift
+//  KoreanGalleryView.swift
 //  kanji
 //
-//  Created by Coby on 2/17/24.
+//  Created by Coby on 2/24/24.
 //
 
 import SwiftUI
 
-struct KanjiGalleryView: View {
+struct KoreanGalleryView: View {
     
     @Environment(\.dismiss) private var dismiss
     
@@ -50,13 +50,13 @@ struct KanjiGalleryView: View {
                     VStack {
                         LazyVGrid(columns: self.columns, spacing: 10) {
                             ForEach(Array(self.characters.enumerated()), id: \.element) { index, character in
-                                GalleryListItemView(kanji: character.kanji)
+                                GalleryItemView(kanji: character.kanji)
                                     .overlay(
                                         Color.black.opacity(index <= self.index ? 0.3 : 0)
                                     )
                                     .scaledToFit()
                                     .onTapGesture {
-                                        UserDefaults.standard.set(index, forKey: self.grade.rawValue)
+                                        UserDefaults.standard.set(index, forKey: "korean" + self.grade.rawValue)
                                         self.dismiss()
                                     }
                                     .id(index)
@@ -67,7 +67,7 @@ struct KanjiGalleryView: View {
                         .padding(.bottom)
                     }
                     .onAppear {
-                        self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0
+                        self.index = UserDefaults.standard.object(forKey: "korean" + grade.rawValue) as? Int ?? 0
                         value.scrollTo(self.index, anchor: .init(x: 0.0, y: 0.2))
                     }
                 }

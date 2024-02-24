@@ -1,13 +1,13 @@
 //
-//  GalleryListItemView.swift
+//  WordGalleryItemView.swift
 //  kanji
 //
-//  Created by Coby on 2/17/24.
+//  Created by Coby on 2/24/24.
 //
 
 import SwiftUI
 
-struct GalleryListItemView: View {
+struct WordGalleryItemView: View {
     
     private let kanji: String
     
@@ -18,8 +18,9 @@ struct GalleryListItemView: View {
     var body: some View {
         GeometryReader { geometry in
             Text(self.kanji)
-                .font(.jkMaru(size: geometry.size.width / 2))
+                .font(.jkMaru(size: geometry.size.width * 0.2))
                 .foregroundColor(.black)
+                .padding()
                 .frame(
                     width: geometry.size.width,
                     height: geometry.size.height
@@ -33,5 +34,10 @@ struct GalleryListItemView: View {
 }
 
 #Preview {
-    GalleryListItemView(kanji: "家")
+    VStack {
+        GeometryReader { geometry in
+            WordGalleryItemView(kanji: "家家家家家")
+                .frame(width: geometry.size.width / 2, height: geometry.size.height / 2)
+        }
+    }
 }

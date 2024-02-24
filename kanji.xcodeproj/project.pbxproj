@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB1FE8002B8011D700F8E9BE /* KanjiGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */; };
-		CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */; };
+		CB1FE8032B80179900F8E9BE /* GalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryItemView.swift */; };
 		CB5DC6102B8A0A1200917BFE /* KoreanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */; };
 		CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */; };
 		CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */; };
@@ -17,6 +17,8 @@
 		CB5DC6232B8A295900917BFE /* WordListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6222B8A295900917BFE /* WordListItemView.swift */; };
 		CB5DC6262B8A2BAF00917BFE /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6252B8A2BAF00917BFE /* WordDetailView.swift */; };
 		CB7F96682B8A352100CE7D0D /* WordBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F96672B8A352100CE7D0D /* WordBoardView.swift */; };
+		CB7F966A2B8A3BDA00CE7D0D /* WordGalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F96692B8A3BDA00CE7D0D /* WordGalleryItemView.swift */; };
+		CB7F966C2B8A3CB600CE7D0D /* WordGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F966B2B8A3CB600CE7D0D /* WordGalleryView.swift */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
@@ -64,7 +66,7 @@
 
 /* Begin PBXFileReference section */
 		CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiGalleryView.swift; sourceTree = "<group>"; };
-		CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListItemView.swift; sourceTree = "<group>"; };
+		CB1FE8022B80179900F8E9BE /* GalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemView.swift; sourceTree = "<group>"; };
 		CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanDetailView.swift; sourceTree = "<group>"; };
 		CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanGalleryView.swift; sourceTree = "<group>"; };
 		CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		CB5DC6222B8A295900917BFE /* WordListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListItemView.swift; sourceTree = "<group>"; };
 		CB5DC6252B8A2BAF00917BFE /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 		CB7F96672B8A352100CE7D0D /* WordBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBoardView.swift; sourceTree = "<group>"; };
+		CB7F96692B8A3BDA00CE7D0D /* WordGalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGalleryItemView.swift; sourceTree = "<group>"; };
+		CB7F966B2B8A3CB600CE7D0D /* WordGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGalleryView.swift; sourceTree = "<group>"; };
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
@@ -134,8 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				CB1FE8012B8011DB00F8E9BE /* Component */,
-				CB5DC6112B8A0A6000917BFE /* Kanji */,
-				CB5DC6122B8A0A7100917BFE /* Korean */,
+				CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */,
+				CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */,
+				CB7F966B2B8A3CB600CE7D0D /* WordGalleryView.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -143,57 +148,10 @@
 		CB1FE8012B8011DB00F8E9BE /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */,
+				CB1FE8022B80179900F8E9BE /* GalleryItemView.swift */,
+				CB7F96692B8A3BDA00CE7D0D /* WordGalleryItemView.swift */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		CB5DC60D2B8A065C00917BFE /* Kanji */ = {
-			isa = PBXGroup;
-			children = (
-				CB9169E72B7FE41800625D5A /* KanjiDetailView.swift */,
-			);
-			path = Kanji;
-			sourceTree = "<group>";
-		};
-		CB5DC60E2B8A066100917BFE /* Korean */ = {
-			isa = PBXGroup;
-			children = (
-				CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */,
-			);
-			path = Korean;
-			sourceTree = "<group>";
-		};
-		CB5DC6112B8A0A6000917BFE /* Kanji */ = {
-			isa = PBXGroup;
-			children = (
-				CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */,
-			);
-			path = Kanji;
-			sourceTree = "<group>";
-		};
-		CB5DC6122B8A0A7100917BFE /* Korean */ = {
-			isa = PBXGroup;
-			children = (
-				CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */,
-			);
-			path = Korean;
-			sourceTree = "<group>";
-		};
-		CB5DC61B2B8A256A00917BFE /* Word */ = {
-			isa = PBXGroup;
-			children = (
-				CB5DC61C2B8A257300917BFE /* WordView.swift */,
-			);
-			path = Word;
-			sourceTree = "<group>";
-		};
-		CB5DC6242B8A2BA100917BFE /* Word */ = {
-			isa = PBXGroup;
-			children = (
-				CB5DC6252B8A2BAF00917BFE /* WordDetailView.swift */,
-			);
-			path = Word;
 			sourceTree = "<group>";
 		};
 		CB81756A2B80B960007DDE1D /* Extensions */ = {
@@ -249,11 +207,11 @@
 			isa = PBXGroup;
 			children = (
 				CB9169DF2B7FDC8100625D5A /* Component */,
-				CBF6DE5A2B8A043F0054A7C8 /* Start */,
-				CBF6DE5B2B8A044C0054A7C8 /* Kanji */,
-				CBF6DE5C2B8A04510054A7C8 /* Korean */,
-				CB5DC61B2B8A256A00917BFE /* Word */,
 				CB9169C42B7FB97300625D5A /* MainView.swift */,
+				CB9169E02B7FDCB500625D5A /* StartView.swift */,
+				CB9169E22B7FDD1600625D5A /* KanjiView.swift */,
+				CBF6DE582B8A02220054A7C8 /* KoreanView.swift */,
+				CB5DC61C2B8A257300917BFE /* WordView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -306,9 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				CB9169E92B7FE44E00625D5A /* Component */,
-				CB5DC60D2B8A065C00917BFE /* Kanji */,
-				CB5DC60E2B8A066100917BFE /* Korean */,
-				CB5DC6242B8A2BA100917BFE /* Word */,
+				CB9169E72B7FE41800625D5A /* KanjiDetailView.swift */,
+				CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */,
+				CB5DC6252B8A2BAF00917BFE /* WordDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -382,30 +340,6 @@
 				CB92A3C42B7FB6E800975852 /* kanjiUITestsLaunchTests.swift */,
 			);
 			path = kanjiUITests;
-			sourceTree = "<group>";
-		};
-		CBF6DE5A2B8A043F0054A7C8 /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				CB9169E02B7FDCB500625D5A /* StartView.swift */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
-		CBF6DE5B2B8A044C0054A7C8 /* Kanji */ = {
-			isa = PBXGroup;
-			children = (
-				CB9169E22B7FDD1600625D5A /* KanjiView.swift */,
-			);
-			path = Kanji;
-			sourceTree = "<group>";
-		};
-		CBF6DE5C2B8A04510054A7C8 /* Korean */ = {
-			isa = PBXGroup;
-			children = (
-				CBF6DE582B8A02220054A7C8 /* KoreanView.swift */,
-			);
-			path = Korean;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,9 +487,10 @@
 				CB9169E82B7FE41800625D5A /* KanjiDetailView.swift in Sources */,
 				CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */,
 				CB9169C52B7FB97300625D5A /* MainView.swift in Sources */,
-				CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */,
+				CB1FE8032B80179900F8E9BE /* GalleryItemView.swift in Sources */,
 				CB9169E32B7FDD1600625D5A /* KanjiView.swift in Sources */,
 				CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */,
+				CB7F966C2B8A3CB600CE7D0D /* WordGalleryView.swift in Sources */,
 				CBF6DE5E2B8A04760054A7C8 /* KoreanListItemView.swift in Sources */,
 				CB5DC61D2B8A257300917BFE /* WordView.swift in Sources */,
 				CB9169CD2B7FC09A00625D5A /* CharacterStorage.swift in Sources */,
@@ -568,6 +503,7 @@
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,
 				CB5DC6232B8A295900917BFE /* WordListItemView.swift in Sources */,
 				CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */,
+				CB7F966A2B8A3BDA00CE7D0D /* WordGalleryItemView.swift in Sources */,
 				CB8175772B80CCBB007DDE1D /* KanjiInfoView.swift in Sources */,
 				CB5DC61A2B8A21BE00917BFE /* QuizTitleView.swift in Sources */,
 				CB9169EB2B7FE46100625D5A /* KanjiBoardView.swift in Sources */,

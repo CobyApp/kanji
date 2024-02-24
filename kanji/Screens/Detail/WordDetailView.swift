@@ -117,7 +117,7 @@ struct WordDetailView: View {
             Spacer()
             
             NavigationLink {
-                KoreanGalleryView(grade: grade)
+                WordGalleryView(grade: grade)
                     .navigationBarHidden(true)
             } label: {
                 Text("목록")
