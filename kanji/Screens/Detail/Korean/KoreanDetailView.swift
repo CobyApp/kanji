@@ -1,20 +1,22 @@
 //
-//  KanjiDetailView.swift
+//  KoreanDetailView.swift
 //  kanji
 //
-//  Created by Coby on 2/17/24.
+//  Created by Coby on 2/24/24.
 //
 
 import SwiftUI
 
-struct KanjiDetailView: View {
+struct KoreanDetailView: View {
     
     @Environment(\.dismiss) private var dismiss
     
     @State private var index: Int = 0
+    @State private var koreans: [String] = []
+    @State private var showAlert = false
     
     private let characterStorage: CharacterStorage = CharacterStorage.shared
-    private let tts: TextToSpeechConverter = TextToSpeechConverter.shared
+    private let columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 100, maximum: .infinity)), count: 2)
     
     private let characters: [Character]
     private let grade: GradeType
@@ -43,14 +45,29 @@ struct KanjiDetailView: View {
                     TopAppbarView()
                     
                     KanjiBoardView(kanji: self.characters[self.index].kanji)
-                        .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
+                        .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
                         .padding(.bottom)
                     
-                    KanjiInfoView(
-                        character: self.characters[self.index],
-                        total: self.characters.count,
-                        count: self.index + 1
-                    )
+                    VStack(spacing: 4) {
+                        QuizTitleView(index: self.index, total: self.characters.count)
+                        
+                        GeometryReader { geometry in
+                            LazyVGrid(columns: self.columns, spacing: 4) {
+                                ForEach(self.koreans, id: \.self) { korean in
+                                    QuizItemView(korean: korean)
+                                        .frame(width: (geometry.size.width - 4) / 2, height: (geometry.size.height - 4) / 2)
+                                        .onTapGesture {
+                                            if korean == self.characters[self.index].korean {
+                                                self.nextIndex()
+                                            } else {
+                                                self.showAlert = true
+                                                self.koreans = self.characterStorage.getKoreanQuizItems(korean: self.characters[self.index].korean)
+                                            }
+                                        }
+                                }
+                            }
+                        }
+                    }
                     
                     HStack(spacing: 10) {
                         Button("이전") {
@@ -69,15 +86,19 @@ struct KanjiDetailView: View {
             }
         }
         .onAppear {
-            self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0
-            self.tts.speakKanji(sound: self.characters[index].fullSound, meaning: self.characters[index].fullMeaning)
-        }
-        .onDisappear {
-            self.tts.stopSpeaking()
+            self.index = UserDefaults.standard.object(forKey: "korean" + grade.rawValue) as? Int ?? 0
+            self.koreans = self.characterStorage.getKoreanQuizItems(korean: self.characters[self.index].korean)
         }
         .onChange(of: self.index) {
             UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
-            self.tts.speakKanji(sound: self.characters[index].fullSound, meaning: self.characters[index].fullMeaning)
+            self.koreans = self.characterStorage.getKoreanQuizItems(korean: self.characters[self.index].korean)
+        }
+        .alert(isPresented: self.$showAlert) {
+            Alert(
+                title: Text("오답"),
+                message: Text("문제를 새로고침합니다."),
+                dismissButton: .default(Text("확인"))
+            )
         }
     }
     
@@ -96,7 +117,7 @@ struct KanjiDetailView: View {
             Spacer()
             
             NavigationLink {
-                KanjiGalleryView(grade: grade)
+                KoreanGalleryView(grade: grade)
                     .navigationBarHidden(true)
             } label: {
                 Text("목록")

@@ -13,9 +13,9 @@ struct MainButtonStyle: ButtonStyle {
             .font(.ownglyph(size: 20))
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
-            .frame(height: 50)
+            .frame(height: 60)
             .background(
-                Capsule().fill(Color.black.opacity(0.75))
+                Capsule().fill(Color.black.opacity(0.8))
             )
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }

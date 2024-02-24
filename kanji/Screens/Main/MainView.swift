@@ -48,6 +48,8 @@ struct MainView: View {
         }
         .onAppear {
             self.isSpearkOn = UserDefaults.standard.object(forKey: "isSpeakerOn") as? Bool ?? true
+            let _ = TextToSpeechConverter.shared
+            let _ = CharacterStorage.shared
         }
     }
     
@@ -63,7 +65,7 @@ struct MainView: View {
                     Image(systemName: self.isSpearkOn ? "speaker.fill" : "speaker.slash.fill")
                         .foregroundColor(.white)
                         .frame(width: 50, height: 50)
-                        .background(Circle().fill(Color.black.opacity(0.75)))
+                        .background(Circle().fill(Color.black.opacity(0.8)))
                 }
             case .kanji:
                 Button {
@@ -72,7 +74,7 @@ struct MainView: View {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.white)
                         .frame(width: 50, height: 50)
-                        .background(Circle().fill(Color.black.opacity(0.75)))
+                        .background(Circle().fill(Color.black.opacity(0.8)))
                 }
             case .korean:
                 Button {
@@ -81,7 +83,7 @@ struct MainView: View {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.white)
                         .frame(width: 50, height: 50)
-                        .background(Circle().fill(Color.black.opacity(0.75)))
+                        .background(Circle().fill(Color.black.opacity(0.8)))
                 }
             }
             

@@ -1,5 +1,5 @@
 //
-//  KoreanListItemView.swift
+//  QuizTitleView.swift
 //  kanji
 //
 //  Created by Coby on 2/24/24.
@@ -7,21 +7,19 @@
 
 import SwiftUI
 
-struct KoreanListItemView: View {
+struct QuizTitleView: View {
     
-    @State private var index: Int = 0
-    
-    private let grade: GradeType
+    private let index: Int
     private let total: Int
     
-    init(grade: GradeType) {
-        self.grade = grade
-        self.total = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade).count
+    init(index: Int, total: Int) {
+        self.index = index
+        self.total = total
     }
     
     var body: some View {
         HStack {
-            Text(self.grade.title)
+            Text("문제 \(self.index + 1)")
             
             Spacer()
             
@@ -36,12 +34,9 @@ struct KoreanListItemView: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.black.opacity(0.8))
         )
-        .onAppear {
-            self.index = UserDefaults.standard.object(forKey: "korean" + grade.rawValue) as? Int ?? 0
-        }
     }
 }
 
 #Preview {
-    KoreanListItemView(grade: .three)
+    QuizTitleView(index: 0, total: 100)
 }

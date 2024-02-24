@@ -1,25 +1,25 @@
 //
-//  GalleryView.swift
+//  KoreanGalleryView.swift
 //  kanji
 //
-//  Created by Coby on 2/17/24.
+//  Created by Coby on 2/24/24.
 //
 
 import SwiftUI
 
-struct GalleryView: View {
+struct KoreanGalleryView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @State private var index: Int = 0
+    
     private let grade: GradeType
-    private let index: Int
     private let characters: [Character]
     
     private let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
-    init(grade: GradeType, index: Int) {
+    init(grade: GradeType) {
         self.grade = grade
-        self.index = index
         self.characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
     }
     
@@ -56,7 +56,7 @@ struct GalleryView: View {
                                     )
                                     .scaledToFit()
                                     .onTapGesture {
-                                        UserDefaults.standard.set(index, forKey: self.grade.rawValue)
+                                        UserDefaults.standard.set(index, forKey: "korean" + self.grade.rawValue)
                                         self.dismiss()
                                     }
                                     .id(index)
@@ -67,6 +67,7 @@ struct GalleryView: View {
                         .padding(.bottom)
                     }
                     .onAppear {
+                        self.index = UserDefaults.standard.object(forKey: "korean" + grade.rawValue) as? Int ?? 0
                         value.scrollTo(self.index, anchor: .init(x: 0.0, y: 0.2))
                     }
                 }
@@ -85,7 +86,7 @@ struct GalleryView: View {
                 Image(systemName: "chevron.left")
                     .foregroundColor(.white)
                     .frame(width: 50, height: 50)
-                    .background(Circle().fill(Color.black.opacity(0.75)))
+                    .background(Circle().fill(Color.black.opacity(0.8)))
             }
             
             Spacer()
@@ -96,7 +97,7 @@ struct GalleryView: View {
                 .padding(.horizontal)
                 .frame(height: 50)
                 .background(
-                    Capsule().fill(Color.black.opacity(0.75))
+                    Capsule().fill(Color.black.opacity(0.8))
                 )
         }
     }

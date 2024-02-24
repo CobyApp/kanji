@@ -31,9 +31,10 @@ struct KanjiListItemView: View {
         .foregroundColor(.white)
         .padding(.horizontal)
         .frame(maxWidth: .infinity)
-        .frame(height: 50)
+        .frame(height: 60)
         .background(
-            Capsule().fill(Color.black.opacity(0.75))
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.black.opacity(0.8))
         )
         .onAppear {
             self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB1FE7FD2B7FF0DD00F8E9BE /* CloseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */; };
-		CB1FE8002B8011D700F8E9BE /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */; };
+		CB1FE8002B8011D700F8E9BE /* KanjiGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */; };
 		CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */; };
+		CB5DC6102B8A0A1200917BFE /* KoreanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */; };
+		CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */; };
+		CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */; };
+		CB5DC61A2B8A21BE00917BFE /* QuizTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
@@ -56,9 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonStyle.swift; sourceTree = "<group>"; };
-		CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiGalleryView.swift; sourceTree = "<group>"; };
 		CB1FE8022B80179900F8E9BE /* GalleryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListItemView.swift; sourceTree = "<group>"; };
+		CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanDetailView.swift; sourceTree = "<group>"; };
+		CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanGalleryView.swift; sourceTree = "<group>"; };
+		CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
+		CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTitleView.swift; sourceTree = "<group>"; };
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
@@ -120,7 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				CB1FE8012B8011DB00F8E9BE /* Component */,
-				CB1FE7FF2B8011D700F8E9BE /* GalleryView.swift */,
+				CB5DC6112B8A0A6000917BFE /* Kanji */,
+				CB5DC6122B8A0A7100917BFE /* Korean */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -144,6 +151,23 @@
 		CB5DC60E2B8A066100917BFE /* Korean */ = {
 			isa = PBXGroup;
 			children = (
+				CB5DC60F2B8A0A1200917BFE /* KoreanDetailView.swift */,
+			);
+			path = Korean;
+			sourceTree = "<group>";
+		};
+		CB5DC6112B8A0A6000917BFE /* Kanji */ = {
+			isa = PBXGroup;
+			children = (
+				CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */,
+			);
+			path = Kanji;
+			sourceTree = "<group>";
+		};
+		CB5DC6122B8A0A7100917BFE /* Korean */ = {
+			isa = PBXGroup;
+			children = (
+				CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */,
 			);
 			path = Korean;
 			sourceTree = "<group>";
@@ -239,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				CB9169D82B7FD46C00625D5A /* MainButtonStyle.swift */,
-				CB1FE7FC2B7FF0DD00F8E9BE /* CloseButtonStyle.swift */,
 			);
 			path = ButtonStyle;
 			sourceTree = "<group>";
@@ -268,6 +291,8 @@
 			children = (
 				CB9169EA2B7FE46100625D5A /* KanjiBoardView.swift */,
 				CB8175762B80CCBB007DDE1D /* KanjiInfoView.swift */,
+				CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */,
+				CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -495,24 +520,27 @@
 				CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */,
 				CB9169E12B7FDCB500625D5A /* StartView.swift in Sources */,
 				CB8175792B80D191007DDE1D /* TextToSpeechConverter.swift in Sources */,
+				CB5DC6102B8A0A1200917BFE /* KoreanDetailView.swift in Sources */,
 				CB9169E82B7FE41800625D5A /* KanjiDetailView.swift in Sources */,
 				CB9169E52B7FDE8B00625D5A /* StateType.swift in Sources */,
 				CB9169C52B7FB97300625D5A /* MainView.swift in Sources */,
 				CB1FE8032B80179900F8E9BE /* GalleryListItemView.swift in Sources */,
 				CB9169E32B7FDD1600625D5A /* KanjiView.swift in Sources */,
+				CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */,
 				CBF6DE5E2B8A04760054A7C8 /* KoreanListItemView.swift in Sources */,
 				CB9169CD2B7FC09A00625D5A /* CharacterStorage.swift in Sources */,
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
 				CBF6DE592B8A02220054A7C8 /* KoreanView.swift in Sources */,
-				CB1FE8002B8011D700F8E9BE /* GalleryView.swift in Sources */,
+				CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */,
+				CB1FE8002B8011D700F8E9BE /* KanjiGalleryView.swift in Sources */,
 				CB9169ED2B7FEBE100625D5A /* KanjiListItemView.swift in Sources */,
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,
 				CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */,
 				CB8175772B80CCBB007DDE1D /* KanjiInfoView.swift in Sources */,
+				CB5DC61A2B8A21BE00917BFE /* QuizTitleView.swift in Sources */,
 				CB9169EB2B7FE46100625D5A /* KanjiBoardView.swift in Sources */,
 				CB9169C72B7FBE3C00625D5A /* Character.swift in Sources */,
 				CB9169D92B7FD46C00625D5A /* MainButtonStyle.swift in Sources */,
-				CB1FE7FD2B7FF0DD00F8E9BE /* CloseButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

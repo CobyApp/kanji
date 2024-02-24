@@ -18,7 +18,7 @@ struct KoreanView: View {
                     }
                 }
                 .navigationDestination(for: GradeType.self) { grade in
-                    Text("한국어")
+                    KoreanDetailView(grade: grade)
                         .navigationBarHidden(true)
                 }
                 
