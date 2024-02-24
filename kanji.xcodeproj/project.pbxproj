@@ -16,6 +16,7 @@
 		CB5DC61D2B8A257300917BFE /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC61C2B8A257300917BFE /* WordView.swift */; };
 		CB5DC6232B8A295900917BFE /* WordListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6222B8A295900917BFE /* WordListItemView.swift */; };
 		CB5DC6262B8A2BAF00917BFE /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6252B8A2BAF00917BFE /* WordDetailView.swift */; };
+		CB7F96682B8A352100CE7D0D /* WordBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F96672B8A352100CE7D0D /* WordBoardView.swift */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
@@ -71,6 +72,7 @@
 		CB5DC61C2B8A257300917BFE /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		CB5DC6222B8A295900917BFE /* WordListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListItemView.swift; sourceTree = "<group>"; };
 		CB5DC6252B8A2BAF00917BFE /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
+		CB7F96672B8A352100CE7D0D /* WordBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBoardView.swift; sourceTree = "<group>"; };
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9169EA2B7FE46100625D5A /* KanjiBoardView.swift */,
+				CB7F96672B8A352100CE7D0D /* WordBoardView.swift */,
 				CB8175762B80CCBB007DDE1D /* KanjiInfoView.swift */,
 				CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */,
 				CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */,
@@ -559,6 +562,7 @@
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
 				CBF6DE592B8A02220054A7C8 /* KoreanView.swift in Sources */,
 				CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */,
+				CB7F96682B8A352100CE7D0D /* WordBoardView.swift in Sources */,
 				CB1FE8002B8011D700F8E9BE /* KanjiGalleryView.swift in Sources */,
 				CB9169ED2B7FEBE100625D5A /* KanjiListItemView.swift in Sources */,
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,

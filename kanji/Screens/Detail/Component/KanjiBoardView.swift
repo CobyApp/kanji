@@ -18,8 +18,8 @@ struct KanjiBoardView: View {
     var body: some View {
         GeometryReader { geometry in
             Text(self.kanji)
-                .font(.jkMaru(size: geometry.size.height * 0.8))
-                .padding(geometry.size.height * 0.1)
+                .font(.jkMaru(size: geometry.size.width * 0.8))
+                .padding(geometry.size.width * 0.1)
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .background(
@@ -33,7 +33,9 @@ struct KanjiBoardView: View {
 
 #Preview {
     VStack {
-        KanjiBoardView(kanji: "家")
-            .background(Color.blue)
+        GeometryReader { geometry in
+            KanjiBoardView(kanji: "家")
+                .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
+        }
     }
 }

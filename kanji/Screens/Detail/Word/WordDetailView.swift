@@ -44,8 +44,8 @@ struct WordDetailView: View {
                 VStack(spacing: 16) {
                     TopAppbarView()
                     
-                    KanjiBoardView(kanji: self.wordItems[self.index].wordKanji)
-                        .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
+                    WordBoardView(kanji: self.wordItems[self.index].wordKanji, mean: self.wordItems[self.index].mean)
+                        .frame(width: geometry.size.width * 0.8, height: geometry.size.width * 0.6)
                         .padding(.bottom)
                     
                     VStack(spacing: 4) {
