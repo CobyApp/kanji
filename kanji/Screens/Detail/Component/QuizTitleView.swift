@@ -9,17 +9,23 @@ import SwiftUI
 
 struct QuizTitleView: View {
     
+    private let count: Int
     private let index: Int
     private let total: Int
     
-    init(index: Int, total: Int) {
+    init(
+        count: Int,
+        index: Int,
+        total: Int
+    ) {
+        self.count = count
         self.index = index
         self.total = total
     }
     
     var body: some View {
         HStack {
-            Text("문제 \(self.index + 1)")
+            Text("오답횟수 \(self.count)")
             
             Spacer()
             
@@ -38,5 +44,5 @@ struct QuizTitleView: View {
 }
 
 #Preview {
-    QuizTitleView(index: 0, total: 100)
+    QuizTitleView(count: 0, index: 0, total: 100)
 }

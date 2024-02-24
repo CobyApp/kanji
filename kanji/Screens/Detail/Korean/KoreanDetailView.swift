@@ -12,8 +12,8 @@ struct KoreanDetailView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var index: Int = 0
+    @State private var count: Int = 0
     @State private var koreans: [String] = []
-    @State private var showAlert = false
     
     private let characterStorage: CharacterStorage = CharacterStorage.shared
     private let columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 100, maximum: .infinity)), count: 2)
@@ -49,7 +49,11 @@ struct KoreanDetailView: View {
                         .padding(.bottom)
                     
                     VStack(spacing: 4) {
-                        QuizTitleView(index: self.index, total: self.characters.count)
+                        QuizTitleView(
+                            count: self.count,
+                            index: self.index,
+                            total: self.characters.count
+                        )
                         
                         GeometryReader { geometry in
                             LazyVGrid(columns: self.columns, spacing: 4) {
@@ -60,8 +64,9 @@ struct KoreanDetailView: View {
                                             if korean == self.characters[self.index].korean {
                                                 self.nextIndex()
                                             } else {
-                                                self.showAlert = true
                                                 self.koreans = self.characterStorage.getKoreanQuizItems(korean: self.characters[self.index].korean)
+                                                self.count += 1
+                                                UserDefaults.standard.set(self.count, forKey: "korean" + self.characters[self.index].kanji)
                                             }
                                         }
                                 }
@@ -87,18 +92,13 @@ struct KoreanDetailView: View {
         }
         .onAppear {
             self.index = UserDefaults.standard.object(forKey: "korean" + grade.rawValue) as? Int ?? 0
+            self.count = UserDefaults.standard.object(forKey: "korean" + self.characters[self.index].kanji) as? Int ?? 0
             self.koreans = self.characterStorage.getKoreanQuizItems(korean: self.characters[self.index].korean)
         }
         .onChange(of: self.index) {
-            UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
+            UserDefaults.standard.set(self.index, forKey: "korean" + self.grade.rawValue)
+            self.count = UserDefaults.standard.object(forKey: "korean" + self.characters[self.index].kanji) as? Int ?? 0
             self.koreans = self.characterStorage.getKoreanQuizItems(korean: self.characters[self.index].korean)
-        }
-        .alert(isPresented: self.$showAlert) {
-            Alert(
-                title: Text("오답"),
-                message: Text("문제를 새로고침합니다."),
-                dismissButton: .default(Text("확인"))
-            )
         }
     }
     

@@ -13,6 +13,7 @@
 		CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */; };
 		CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */; };
 		CB5DC61A2B8A21BE00917BFE /* QuizTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */; };
+		CB5DC61D2B8A257300917BFE /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC61C2B8A257300917BFE /* WordView.swift */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
@@ -65,6 +66,7 @@
 		CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanGalleryView.swift; sourceTree = "<group>"; };
 		CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
 		CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTitleView.swift; sourceTree = "<group>"; };
+		CB5DC61C2B8A257300917BFE /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = Korean;
 			sourceTree = "<group>";
 		};
+		CB5DC61B2B8A256A00917BFE /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				CB5DC61C2B8A257300917BFE /* WordView.swift */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
 		CB81756A2B80B960007DDE1D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 				CBF6DE5A2B8A043F0054A7C8 /* Start */,
 				CBF6DE5B2B8A044C0054A7C8 /* Kanji */,
 				CBF6DE5C2B8A04510054A7C8 /* Korean */,
+				CB5DC61B2B8A256A00917BFE /* Word */,
 				CB9169C42B7FB97300625D5A /* MainView.swift */,
 			);
 			path = Main;
@@ -528,6 +539,7 @@
 				CB9169E32B7FDD1600625D5A /* KanjiView.swift in Sources */,
 				CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */,
 				CBF6DE5E2B8A04760054A7C8 /* KoreanListItemView.swift in Sources */,
+				CB5DC61D2B8A257300917BFE /* WordView.swift in Sources */,
 				CB9169CD2B7FC09A00625D5A /* CharacterStorage.swift in Sources */,
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
 				CBF6DE592B8A02220054A7C8 /* KoreanView.swift in Sources */,
