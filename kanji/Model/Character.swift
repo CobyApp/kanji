@@ -27,12 +27,6 @@ extension Character {
     }
 }
 
-extension [Character] {
-    func getCharactersByGrade(grade: GradeType) -> [Character] {
-        self.filter { $0.grade == grade }
-    }
-}
-
 struct WordItem: Hashable {
     let word: String
     let mean: String

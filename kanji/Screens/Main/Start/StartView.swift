@@ -26,7 +26,12 @@ struct StartView: View {
             }
             .buttonStyle(MainButtonStyle())
             
-            Button("한자 뜻음 퀴즈") {
+            Button("뜻음 퀴즈") {
+                self.state = .korean
+            }
+            .buttonStyle(MainButtonStyle())
+            
+            Button("단어 퀴즈") {
                 self.state = .korean
             }
             .buttonStyle(MainButtonStyle())

@@ -16,7 +16,7 @@ struct KanjiListItemView: View {
     
     init(grade: GradeType) {
         self.grade = grade
-        self.total = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade).count
+        self.total = CharacterStorage.shared.getCharactersByGrade(grade: grade).count
     }
     
     var body: some View {

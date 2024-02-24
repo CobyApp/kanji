@@ -28,6 +28,10 @@ final class CharacterStorage {
         }
     }
     
+    func getCharactersByGrade(grade: GradeType) -> [Character] {
+        self.characters.filter { $0.grade == grade }
+    }
+    
     func getRandomCharacters() -> [Character] {
         let shuffledCharacters = self.characters.shuffled()
         return Array(shuffledCharacters.prefix(3))

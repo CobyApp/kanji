@@ -23,7 +23,7 @@ struct KoreanDetailView: View {
     
     init(grade: GradeType) {
         self.grade = grade
-        self.characters = characterStorage.characters.getCharactersByGrade(grade: grade)
+        self.characters = characterStorage.getCharactersByGrade(grade: grade)
     }
     
     var body: some View {

@@ -20,7 +20,7 @@ struct KoreanGalleryView: View {
     
     init(grade: GradeType) {
         self.grade = grade
-        self.characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
+        self.characters = CharacterStorage.shared.getCharactersByGrade(grade: grade)
     }
     
     var body: some View {
