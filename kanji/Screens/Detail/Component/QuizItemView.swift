@@ -9,15 +9,15 @@ import SwiftUI
 
 struct QuizItemView: View {
     
-    private let korean: String
+    private let quiz: String
     
-    init(korean: String) {
-        self.korean = korean
+    init(quiz: String) {
+        self.quiz = quiz
     }
     
     var body: some View {
         GeometryReader { geometry in
-            Text(self.makeTwoLines(koreans: self.korean))
+            Text(self.makeTwoLines(koreans: self.quiz))
                 .font(.ownglyph(size: geometry.size.width / 8))
                 .foregroundColor(.white)
                 .padding()
@@ -39,5 +39,5 @@ struct QuizItemView: View {
 }
 
 #Preview {
-    QuizItemView(korean: "수레 차")
+    QuizItemView(quiz: "수레 차")
 }

@@ -13,17 +13,17 @@ struct WordDetailView: View {
     
     @State private var index: Int = 0
     @State private var count: Int = 0
-    @State private var words: [String] = []
+    @State private var wordSounds: [String] = []
     
     private let characterStorage: CharacterStorage = CharacterStorage.shared
     private let columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 100, maximum: .infinity)), count: 2)
     
-    private let characters: [Character]
+    private let wordItems: [WordItem]
     private let grade: GradeType
     
     init(grade: GradeType) {
         self.grade = grade
-        self.characters = characterStorage.getCharactersByGrade(grade: grade)
+        self.wordItems = characterStorage.getWordsByGrade(grade: grade)
     }
     
     var body: some View {
@@ -44,7 +44,7 @@ struct WordDetailView: View {
                 VStack(spacing: 16) {
                     TopAppbarView()
                     
-                    KanjiBoardView(kanji: self.characters[self.index].kanji)
+                    KanjiBoardView(kanji: self.wordItems[self.index].wordKanji)
                         .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
                         .padding(.bottom)
                     
@@ -52,21 +52,21 @@ struct WordDetailView: View {
                         QuizTitleView(
                             count: self.count,
                             index: self.index,
-                            total: self.characters.count
+                            total: self.wordItems.count
                         )
                         
                         GeometryReader { geometry in
                             LazyVGrid(columns: self.columns, spacing: 4) {
-                                ForEach(self.words, id: \.self) { korean in
-                                    QuizItemView(korean: korean)
+                                ForEach(self.wordSounds, id: \.self) { wordSound in
+                                    QuizItemView(quiz: wordSound)
                                         .frame(width: (geometry.size.width - 4) / 2, height: (geometry.size.height - 4) / 2)
                                         .onTapGesture {
-                                            if korean == self.characters[self.index].korean {
+                                            if wordSound == self.wordItems[self.index].wordSound {
                                                 self.nextIndex()
                                             } else {
-                                                self.words = self.characterStorage.getRandomKoreans(korean: self.characters[self.index].korean)
+                                                self.wordSounds = self.characterStorage.getRandomWordSounds(wordSound: self.wordItems[self.index].wordSound)
                                                 self.count += 1
-                                                UserDefaults.standard.set(self.count, forKey: "korean" + self.characters[self.index].kanji)
+                                                UserDefaults.standard.set(self.count, forKey: "word" + self.wordItems[self.index].wordKanji)
                                             }
                                         }
                                 }
@@ -92,13 +92,13 @@ struct WordDetailView: View {
         }
         .onAppear {
             self.index = UserDefaults.standard.object(forKey: "word" + grade.rawValue) as? Int ?? 0
-            self.count = UserDefaults.standard.object(forKey: "word" + self.characters[self.index].kanji) as? Int ?? 0
-            self.words = self.characterStorage.getRandomKoreans(korean: self.characters[self.index].korean)
+            self.count = UserDefaults.standard.object(forKey: "word" + self.wordItems[self.index].wordKanji) as? Int ?? 0
+            self.wordSounds = self.characterStorage.getRandomWordSounds(wordSound: self.wordItems[self.index].wordSound)
         }
         .onChange(of: self.index) {
             UserDefaults.standard.set(self.index, forKey: "word" + self.grade.rawValue)
-            self.count = UserDefaults.standard.object(forKey: "word" + self.characters[self.index].kanji) as? Int ?? 0
-            self.words = self.characterStorage.getRandomKoreans(korean: self.characters[self.index].korean)
+            self.count = UserDefaults.standard.object(forKey: "word" + self.wordItems[self.index].wordKanji) as? Int ?? 0
+            self.wordSounds = self.characterStorage.getRandomWordSounds(wordSound: self.wordItems[self.index].wordSound)
         }
     }
     
@@ -134,14 +134,14 @@ struct WordDetailView: View {
     
     func beforeIndex() {
         if self.index == 0 {
-            self.index = self.characters.count - 1
+            self.index = self.wordItems.count - 1
         } else {
             self.index -= 1
         }
     }
     
     func nextIndex() {
-        if self.index == self.characters.count - 1 {
+        if self.index == self.wordItems.count - 1 {
             self.index = 0
         } else {
             self.index += 1

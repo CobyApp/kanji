@@ -58,7 +58,7 @@ struct KoreanDetailView: View {
                         GeometryReader { geometry in
                             LazyVGrid(columns: self.columns, spacing: 4) {
                                 ForEach(self.koreans, id: \.self) { korean in
-                                    QuizItemView(korean: korean)
+                                    QuizItemView(quiz: korean)
                                         .frame(width: (geometry.size.width - 4) / 2, height: (geometry.size.height - 4) / 2)
                                         .onTapGesture {
                                             if korean == self.characters[self.index].korean {

@@ -31,3 +31,13 @@ struct WordItem: Hashable {
     let word: String
     let mean: String
 }
+
+extension WordItem {
+    var wordKanji: String {
+        self.word.components(separatedBy: "[").first ?? ""
+    }
+    
+    var wordSound: String {
+        (self.word.components(separatedBy: "[").last ?? "").components(separatedBy: "]").first ?? ""
+    }
+}

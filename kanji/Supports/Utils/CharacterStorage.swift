@@ -57,9 +57,9 @@ final class CharacterStorage {
         return Array(shuffledWords.prefix(3))
     }
     
-    func getRandomWordMeans(mean: String) -> [String] {
-        var quizItems = self.getRandomWordItems().map { $0.mean }
-        quizItems.append(mean)
+    func getRandomWordSounds(wordSound: String) -> [String] {
+        var quizItems = self.getRandomWordItems().map { $0.wordSound }
+        quizItems.append(wordSound)
         return quizItems.shuffled()
     }
 }
