@@ -21,7 +21,7 @@ struct WordBoardView: View {
         GeometryReader { geometry in
             VStack(spacing: 20) {
                 Text(self.kanji)
-                    .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.3))
+                    .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.2))
                     .multilineTextAlignment(.center)
                 
                 Text(self.mean)
