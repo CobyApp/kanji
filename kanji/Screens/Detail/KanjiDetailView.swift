@@ -52,16 +52,26 @@ struct KanjiDetailView: View {
                         count: self.index + 1
                     )
                     
-                    HStack(spacing: 10) {
-                        Button("이전") {
+                    HStack {
+                        Button {
                             self.beforeIndex()
+                        } label: {
+                            Image(systemName: "arrow.left")
+                                .foregroundColor(.white)
+                                .frame(width: 50, height: 50)
+                                .background(Circle().fill(Color.black.opacity(0.8)))
                         }
-                        .buttonStyle(MainButtonStyle())
                         
-                        Button("다음") {
+                        Spacer()
+                        
+                        Button {
                             self.nextIndex()
+                        } label: {
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.white)
+                                .frame(width: 50, height: 50)
+                                .background(Circle().fill(Color.black.opacity(0.8)))
                         }
-                        .buttonStyle(MainButtonStyle())
                     }
                 }
                 .frame(maxWidth: .infinity)
