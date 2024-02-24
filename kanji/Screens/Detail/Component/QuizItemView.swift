@@ -20,6 +20,7 @@ struct QuizItemView: View {
             Text(self.makeTwoLines(koreans: self.quiz))
                 .font(.ownglyph(size: geometry.size.width / 8))
                 .foregroundColor(.white)
+                .multilineTextAlignment(.center)
                 .padding()
                 .frame(
                     width: geometry.size.width,

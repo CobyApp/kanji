@@ -60,24 +60,22 @@ struct MainView: View {
         HStack(alignment: .center) {
             switch self.state {
             case .start:
-                Button {
-                    self.isSpearkOn.toggle()
-                    UserDefaults.standard.set(self.isSpearkOn, forKey: "isSpeakerOn")
-                } label: {
-                    Image(systemName: self.isSpearkOn ? "speaker.fill" : "speaker.slash.fill")
-                        .foregroundColor(.white)
-                        .frame(width: 50, height: 50)
-                        .background(Circle().fill(Color.black.opacity(0.8)))
-                }
+                Image(systemName: self.isSpearkOn ? "speaker.fill" : "speaker.slash.fill")
+                    .foregroundColor(.white)
+                    .frame(width: 50, height: 50)
+                    .background(Circle().fill(Color.black.opacity(0.8)))
+                    .onTapGesture {
+                        self.isSpearkOn.toggle()
+                        UserDefaults.standard.set(self.isSpearkOn, forKey: "isSpeakerOn")
+                    }
             default:
-                Button {
-                    self.state = .start
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.white)
-                        .frame(width: 50, height: 50)
-                        .background(Circle().fill(Color.black.opacity(0.8)))
-                }
+                Image(systemName: "chevron.left")
+                    .foregroundColor(.white)
+                    .frame(width: 50, height: 50)
+                    .background(Circle().fill(Color.black.opacity(0.8)))
+                    .onTapGesture {
+                        self.state = .start
+                    }
             }
             
             Spacer()

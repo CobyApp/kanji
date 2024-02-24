@@ -20,6 +20,7 @@ struct WordGalleryItemView: View {
             Text(self.kanji)
                 .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.2))
                 .foregroundColor(.black)
+                .multilineTextAlignment(.center)
                 .padding()
                 .frame(
                     width: geometry.size.width,
