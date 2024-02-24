@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct WordView: View {
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(spacing: 10) {
+                ForEach(GradeType.allCases, id: \.self) { grade in
+                    NavigationLink(value: grade) {
+                        WordListItemView(grade: grade)
+                    }
+                }
+                .navigationDestination(for: GradeType.self) { grade in
+                    KoreanDetailView(grade: grade)
+                        .navigationBarHidden(true)
+                }
+                
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.top, 80)
+            .padding(.bottom)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 

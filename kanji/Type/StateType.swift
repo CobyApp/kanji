@@ -8,5 +8,5 @@
 import Foundation
 
 enum StateType {
-    case start, kanji, korean
+    case start, kanji, korean, word
 }

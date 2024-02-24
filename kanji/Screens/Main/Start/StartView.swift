@@ -32,7 +32,7 @@ struct StartView: View {
             .buttonStyle(MainButtonStyle())
             
             Button("단어 퀴즈") {
-                self.state = .korean
+                self.state = .word
             }
             .buttonStyle(MainButtonStyle())
         }

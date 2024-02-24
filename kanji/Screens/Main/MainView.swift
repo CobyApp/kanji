@@ -42,6 +42,8 @@ struct MainView: View {
                     KanjiView()
                 case .korean:
                     KoreanView()
+                case .word:
+                    WordView()
                 }
             }
             .zIndex(0)
@@ -67,16 +69,7 @@ struct MainView: View {
                         .frame(width: 50, height: 50)
                         .background(Circle().fill(Color.black.opacity(0.8)))
                 }
-            case .kanji:
-                Button {
-                    self.state = .start
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.white)
-                        .frame(width: 50, height: 50)
-                        .background(Circle().fill(Color.black.opacity(0.8)))
-                }
-            case .korean:
+            default:
                 Button {
                     self.state = .start
                 } label: {
