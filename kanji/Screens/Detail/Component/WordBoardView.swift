@@ -21,10 +21,10 @@ struct WordBoardView: View {
         GeometryReader { geometry in
             VStack(spacing: 20) {
                 Text(self.kanji)
-                    .font(.jkMaru(size: geometry.size.width * 0.2))
+                    .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.3))
                 
                 Text(self.mean)
-                    .font(.ownglyph(size: geometry.size.height * 0.1))
+                    .font(.custom("Ownglyph_meetme-Rg", fixedSize: geometry.size.width * 0.1))
             }
             .padding(geometry.size.width * 0.02)
             .frame(width: geometry.size.width, height: geometry.size.height)
