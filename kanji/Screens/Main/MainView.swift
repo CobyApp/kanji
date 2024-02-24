@@ -45,10 +45,6 @@ struct MainView: View {
             .zIndex(0)
         }
         .onAppear {
-            if self.state == .start {
-                AudioPlayerManager.shared.playSound()
-            }
-            
             self.isSpearkOn = UserDefaults.standard.object(forKey: "isSpeakerOn") as? Bool ?? true
         }
     }

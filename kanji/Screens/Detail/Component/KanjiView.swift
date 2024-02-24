@@ -16,23 +16,24 @@ struct KanjiView: View {
     }
     
     var body: some View {
-        Image("boardBg")
-            .resizable()
-            .scaledToFit()
-            .frame(maxWidth: .infinity)
-            .overlay(
-                GeometryReader { geometry in
-                    Text(self.kanji)
-                        .font(.jkMaru(size: geometry.size.width / 4.4))
-                        .frame(
-                            width: geometry.size.width,
-                            height: geometry.size.height * 1.53
-                        )
-                }
-            )
+        GeometryReader { geometry in
+            Text(self.kanji)
+                .font(.jkMaru(size: geometry.size.height * 0.8))
+                .padding(geometry.size.height * 0.1)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.white)
+                        .stroke(Color.black, lineWidth: 20)
+                )
+        }
     }
 }
 
 #Preview {
-    KanjiView(kanji: "家")
+    VStack {
+        KanjiView(kanji: "家")
+            .background(Color.blue)
+    }
 }

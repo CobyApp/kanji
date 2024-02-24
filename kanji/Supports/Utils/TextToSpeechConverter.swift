@@ -13,7 +13,18 @@ class TextToSpeechConverter {
     
     private let speechSynthesizer = AVSpeechSynthesizer()
     
-    private init() {}
+    private init() {
+        self.configureAudioSession()
+    }
+    
+    private func configureAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.defaultToSpeaker, .mixWithOthers])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("오디오 세션 설정 실패: \(error)")
+        }
+    }
     
     func speak(text: String) {
         if UserDefaults.standard.object(forKey: "isSpeakerOn") as? Bool ?? true {
@@ -26,5 +37,11 @@ class TextToSpeechConverter {
     
     func stopSpeaking() {
         speechSynthesizer.stopSpeaking(at: .immediate)
+    }
+    
+    func speakKanji(sound: String, meaning: String) {
+        self.stopSpeaking()
+        self.speak(text: sound)
+        self.speak(text: meaning)
     }
 }

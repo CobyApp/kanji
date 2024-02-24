@@ -17,6 +17,8 @@ struct DetailView: View {
     private let grade: GradeType
     private let total: Int
     
+    private let tts: TextToSpeechConverter = TextToSpeechConverter.shared
+    
     init(grade: GradeType, index: Int) {
         let characters = CharacterStorage.shared.characters.getCharactersByGrade(grade: grade)
         self._characters = State(wrappedValue: characters)
@@ -39,61 +41,57 @@ struct DetailView: View {
             }
             .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 0) {
-                TopAppbarView()
-                    .zIndex(1)
-                
-                KanjiView(kanji: self.characters[self.index].kanji)
-                    .padding([.top, .horizontal], -60)
-                    .zIndex(0)
-                
-                KanjiInfoView(
-                    character: self.characters[self.index],
-                    total: self.total,
-                    count: self.index + 1
-                )
-                
-                HStack(spacing: 10) {
-                    Button("이전") {
-                        if self.index == 0 {
-                            self.index = self.characters.count - 1
-                        } else {
-                            self.index -= 1
-                        }
-                        
-                        UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
-                    }
-                    .buttonStyle(MainButtonStyle())
+            GeometryReader { geometry in
+                VStack(spacing: 16) {
+                    TopAppbarView()
                     
-                    Button("다음") {
-                        if self.index == self.characters.count - 1 {
-                            self.index = 0
-                        } else {
-                            self.index += 1
+                    KanjiView(kanji: self.characters[self.index].kanji)
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
+                        .padding(.bottom)
+                    
+                    KanjiInfoView(
+                        character: self.characters[self.index],
+                        total: self.total,
+                        count: self.index + 1
+                    )
+                    
+                    HStack(spacing: 10) {
+                        Button("이전") {
+                            if self.index == 0 {
+                                self.index = self.characters.count - 1
+                            } else {
+                                self.index -= 1
+                            }
+                            
+                            UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
                         }
+                        .buttonStyle(MainButtonStyle())
                         
-                        UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
+                        Button("다음") {
+                            if self.index == self.characters.count - 1 {
+                                self.index = 0
+                            } else {
+                                self.index += 1
+                            }
+                            
+                            UserDefaults.standard.set(self.index, forKey: self.grade.rawValue)
+                        }
+                        .buttonStyle(MainButtonStyle())
                     }
-                    .buttonStyle(MainButtonStyle())
                 }
-                .padding(.top)
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-            .frame(maxWidth: .infinity)
-            .padding()
         }
         .onAppear {
             self.index = UserDefaults.standard.object(forKey: grade.rawValue) as? Int ?? 0
-            TextToSpeechConverter.shared.stopSpeaking()
-            TextToSpeechConverter.shared.speak(text: self.characters[index].fullSound)
-            TextToSpeechConverter.shared.speak(text: self.characters[index].fullMeaning)
+            self.tts.speakKanji(sound: self.characters[index].fullSound, meaning: self.characters[index].fullMeaning)
         }
         .onDisappear {
-            TextToSpeechConverter.shared.stopSpeaking()
+            self.tts.stopSpeaking()
         }
         .onChange(of: self.index) {
-            TextToSpeechConverter.shared.stopSpeaking()
-            TextToSpeechConverter.shared.speak(text: self.characters[index].fullSound)
-            TextToSpeechConverter.shared.speak(text: self.characters[index].fullMeaning)
+            self.tts.speakKanji(sound: self.characters[index].fullSound, meaning: self.characters[index].fullMeaning)
         }
     }
     
