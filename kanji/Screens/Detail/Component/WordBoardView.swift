@@ -22,10 +22,12 @@ struct WordBoardView: View {
             VStack(spacing: 20) {
                 Text(self.kanji)
                     .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.2))
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                 
                 Text(self.mean)
                     .font(.custom("Ownglyph_meetme-Rg", fixedSize: geometry.size.width * 0.1))
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
             }
             .padding(geometry.size.width * 0.02)

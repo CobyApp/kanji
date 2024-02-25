@@ -19,6 +19,7 @@ struct KanjiBoardView: View {
         GeometryReader { geometry in
             Text(self.kanji)
                 .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.8))
+                .foregroundColor(.black)
                 .padding(geometry.size.width * 0.1)
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
