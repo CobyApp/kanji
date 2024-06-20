@@ -28,7 +28,6 @@ final class CharacterStorage {
         }
     }
     
-    
     func getCharactersByGrade(grade: GradeType) -> [Character] {
         self.characters.filter { $0.grade == grade }
     }

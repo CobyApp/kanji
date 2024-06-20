@@ -12,7 +12,7 @@ struct kanjiApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                MainView()
+                StartView()
             }
         }
     }

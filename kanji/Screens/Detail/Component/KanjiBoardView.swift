@@ -17,17 +17,14 @@ struct KanjiBoardView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            Text(self.kanji)
-                .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.8))
-                .foregroundColor(.black)
-                .padding(geometry.size.width * 0.1)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white)
-                        .stroke(Color.black, lineWidth: 20)
-                )
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.white)
+                .strokeBorder(Color.black, lineWidth: 10)
+                .overlay {
+                    Text(self.kanji)
+                        .font(.custom("JK-Maru-Gothic-M", fixedSize: geometry.size.width * 0.6))
+                        .foregroundColor(.black)
+                }
         }
     }
 }
@@ -36,7 +33,7 @@ struct KanjiBoardView: View {
     VStack {
         GeometryReader { geometry in
             KanjiBoardView(kanji: "家")
-                .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
+                .frame(width: geometry.size.width, height: geometry.size.width)
         }
     }
 }

@@ -1,22 +1,25 @@
 //
-//  WordListItemView.swift
+//  GradeListItemView.swift
 //  kanji
 //
-//  Created by Coby on 2/24/24.
+//  Created by Coby on 6/21/24.
 //
 
 import SwiftUI
 
-struct WordListItemView: View {
+struct GradeListItemView: View {
     
     @State private var index: Int = 0
     
+    private let learn: LearnType
     private let grade: GradeType
-    private let total: Int
     
-    init(grade: GradeType) {
+    init(
+        learn: LearnType,
+        grade: GradeType
+    ) {
+        self.learn = learn
         self.grade = grade
-        self.total = CharacterStorage.shared.getWordsByGrade(grade: grade).count
     }
     
     var body: some View {
@@ -25,7 +28,7 @@ struct WordListItemView: View {
             
             Spacer()
             
-            Text("\(self.index + 1)/\(self.total)")
+            Text("\(self.index + 1)/\(self.learn.getTotalIndex(grade))")
         }
         .font(.ownglyph(size: 20))
         .foregroundColor(.white)
@@ -37,11 +40,11 @@ struct WordListItemView: View {
                 .fill(Color.black.opacity(0.8))
         )
         .onAppear {
-            self.index = UserDefaults.standard.object(forKey: "word" + grade.rawValue) as? Int ?? 0
+            self.index = self.learn.getLearnedIndex(grade)
         }
     }
 }
 
 #Preview {
-    WordListItemView(grade: .three)
+    GradeListItemView(learn: .kanji, grade: .two)
 }
