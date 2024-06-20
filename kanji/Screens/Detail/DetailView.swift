@@ -24,7 +24,6 @@ struct DetailView: View {
         self.learn.getTotalIndex(self.grade)
     }
     
-    private let characterStorage: CharacterStorage = CharacterStorage.shared
     private let tts: TextToSpeechConverter = TextToSpeechConverter.shared
     
     init(
@@ -33,8 +32,8 @@ struct DetailView: View {
     ) {
         self.learn = learn
         self.grade = grade
-        self.characters = self.characterStorage.getCharactersByGrade(grade: grade)
-        self.wordItems = self.characterStorage.getWordsByGrade(grade: grade)
+        self.characters = CharacterStorage.shared.getCharactersByGrade(grade: grade)
+        self.wordItems = CharacterStorage.shared.getWordsByGrade(grade: grade)
     }
     
     var body: some View {
@@ -97,8 +96,11 @@ struct DetailView: View {
             Spacer()
             
             NavigationLink {
-                Text("목록")
-                    .navigationBarHidden(true)
+                GalleryView(
+                    learn: self.learn,
+                    grade: self.grade
+                )
+                .navigationBarHidden(true)
             } label: {
                 Text("목록")
                     .font(.ownglyph(size: 20))
@@ -138,7 +140,7 @@ struct DetailView: View {
             QuizView(
                 count: self.count,
                 index: self.index,
-                total: self.learn.getTotalIndex(self.grade),
+                total: self.total,
                 quizItems: self.quizItems,
                 quizAction: { item in
                     if item == self.characters[self.index].korean {

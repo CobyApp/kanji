@@ -12,14 +12,11 @@
 		CB0D58FD2C249EB100EFE3D3 /* GradeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0D58FC2C249EB100EFE3D3 /* GradeListItemView.swift */; };
 		CB0D59012C24A1F400EFE3D3 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0D59002C24A1F400EFE3D3 /* QuizView.swift */; };
 		CB0D59032C24A93B00EFE3D3 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0D59022C24A93B00EFE3D3 /* GalleryView.swift */; };
-		CB1FE8002B8011D700F8E9BE /* KanjiGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */; };
 		CB1FE8032B80179900F8E9BE /* GalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE8022B80179900F8E9BE /* GalleryItemView.swift */; };
-		CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */; };
 		CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */; };
 		CB5DC61A2B8A21BE00917BFE /* QuizTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */; };
 		CB7F96682B8A352100CE7D0D /* WordBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F96672B8A352100CE7D0D /* WordBoardView.swift */; };
 		CB7F966A2B8A3BDA00CE7D0D /* WordGalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F96692B8A3BDA00CE7D0D /* WordGalleryItemView.swift */; };
-		CB7F966C2B8A3CB600CE7D0D /* WordGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7F966B2B8A3CB600CE7D0D /* WordGalleryView.swift */; };
 		CB81756C2B80B978007DDE1D /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81756B2B80B978007DDE1D /* Font+Extensions.swift */; };
 		CB81756E2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */; };
 		CB8175722B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8175712B80C3F0007DDE1D /* Ownglyph_meetme-Rg.ttf */; };
@@ -66,14 +63,11 @@
 		CB0D58FC2C249EB100EFE3D3 /* GradeListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeListItemView.swift; sourceTree = "<group>"; };
 		CB0D59002C24A1F400EFE3D3 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		CB0D59022C24A93B00EFE3D3 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
-		CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiGalleryView.swift; sourceTree = "<group>"; };
 		CB1FE8022B80179900F8E9BE /* GalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemView.swift; sourceTree = "<group>"; };
-		CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanGalleryView.swift; sourceTree = "<group>"; };
 		CB5DC6172B8A0EF100917BFE /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
 		CB5DC6192B8A21BE00917BFE /* QuizTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTitleView.swift; sourceTree = "<group>"; };
 		CB7F96672B8A352100CE7D0D /* WordBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBoardView.swift; sourceTree = "<group>"; };
 		CB7F96692B8A3BDA00CE7D0D /* WordGalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGalleryItemView.swift; sourceTree = "<group>"; };
-		CB7F966B2B8A3CB600CE7D0D /* WordGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGalleryView.swift; sourceTree = "<group>"; };
 		CB8175692B80B91B007DDE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB81756B2B80B978007DDE1D /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		CB81756D2B80BC1E007DDE1D /* JK-Maru-Gothic-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JK-Maru-Gothic-M.otf"; sourceTree = "<group>"; };
@@ -131,6 +125,8 @@
 			children = (
 				CB0D58F22C248AB600EFE3D3 /* Component */,
 				CB9169C42B7FB97300625D5A /* StartView.swift */,
+				CB9169E02B7FDCB500625D5A /* SelectView.swift */,
+				CB0D58F32C248C2600EFE3D3 /* GradeView.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -138,21 +134,9 @@
 		CB0D58F22C248AB600EFE3D3 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				CB9169E02B7FDCB500625D5A /* SelectView.swift */,
-				CB0D58F32C248C2600EFE3D3 /* GradeView.swift */,
 				CB0D58FC2C249EB100EFE3D3 /* GradeListItemView.swift */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		CB0D58F72C2491B700EFE3D3 /* Dep */ = {
-			isa = PBXGroup;
-			children = (
-				CB1FE7FF2B8011D700F8E9BE /* KanjiGalleryView.swift */,
-				CB5DC6132B8A0AA700917BFE /* KoreanGalleryView.swift */,
-				CB7F966B2B8A3CB600CE7D0D /* WordGalleryView.swift */,
-			);
-			path = Dep;
 			sourceTree = "<group>";
 		};
 		CB1FE7FE2B8011B800F8E9BE /* Gallery */ = {
@@ -214,7 +198,6 @@
 		CB9169BD2B7FB89500625D5A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CB0D58F72C2491B700EFE3D3 /* Dep */,
 				CB9169D62B7FD44E00625D5A /* Common */,
 				CB0D58F12C24898B00EFE3D3 /* Start */,
 				CB9169E62B7FE3F000625D5A /* Detail */,
@@ -481,8 +464,6 @@
 				CB9169E52B7FDE8B00625D5A /* LearnType.swift in Sources */,
 				CB9169C52B7FB97300625D5A /* StartView.swift in Sources */,
 				CB1FE8032B80179900F8E9BE /* GalleryItemView.swift in Sources */,
-				CB5DC6142B8A0AA700917BFE /* KoreanGalleryView.swift in Sources */,
-				CB7F966C2B8A3CB600CE7D0D /* WordGalleryView.swift in Sources */,
 				CB0D58FD2C249EB100EFE3D3 /* GradeListItemView.swift in Sources */,
 				CB0D59012C24A1F400EFE3D3 /* QuizView.swift in Sources */,
 				CB0D58F42C248C2600EFE3D3 /* GradeView.swift in Sources */,
@@ -490,7 +471,6 @@
 				CB9169D02B7FC17300625D5A /* CharacterDTO.swift in Sources */,
 				CB5DC6182B8A0EF100917BFE /* QuizItemView.swift in Sources */,
 				CB7F96682B8A352100CE7D0D /* WordBoardView.swift in Sources */,
-				CB1FE8002B8011D700F8E9BE /* KanjiGalleryView.swift in Sources */,
 				CB92A3A82B7FB6E700975852 /* kanjiApp.swift in Sources */,
 				CB0D59032C24A93B00EFE3D3 /* GalleryView.swift in Sources */,
 				CB9169CA2B7FBE8A00625D5A /* GradeType.swift in Sources */,
