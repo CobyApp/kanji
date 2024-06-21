@@ -136,7 +136,7 @@ struct DetailView: View {
                 total: self.characters.count,
                 count: self.index + 1
             )
-        case .korean, .word:
+        case .korean:
             QuizView(
                 count: self.count,
                 index: self.index,
@@ -144,9 +144,22 @@ struct DetailView: View {
                 quizItems: self.quizItems,
                 quizAction: { item in
                     if item == self.characters[self.index].korean {
-                        self.index = self.learn.nextIndex(self.grade)
-                        self.count = self.learn.getCount(self.grade)
+                        self.nextIndex()
+                    } else {
                         self.quizItems = self.learn.getQuizItems(self.grade)
+                        self.count = self.learn.addCount(self.grade)
+                    }
+                }
+            )
+        case .word:
+            QuizView(
+                count: self.count,
+                index: self.index,
+                total: self.total,
+                quizItems: self.quizItems,
+                quizAction: { item in
+                    if item == self.wordItems[self.index].wordSound {
+                        self.nextIndex()
                     } else {
                         self.quizItems = self.learn.getQuizItems(self.grade)
                         self.count = self.learn.addCount(self.grade)
@@ -160,7 +173,7 @@ struct DetailView: View {
     private func ArrowsView() -> some View {
         HStack {
             Button {
-                self.index = self.learn.beforeIndex(self.grade)
+                self.beforeIndex()
             } label: {
                 Image(systemName: "arrow.left")
                     .foregroundColor(.white)
@@ -171,7 +184,7 @@ struct DetailView: View {
             Spacer()
             
             Button {
-                self.index = self.learn.nextIndex(self.grade)
+                self.nextIndex()
             } label: {
                 Image(systemName: "arrow.right")
                     .foregroundColor(.white)
@@ -179,6 +192,20 @@ struct DetailView: View {
                     .background(Circle().fill(Color.black.opacity(0.8)))
             }
         }
+    }
+}
+
+extension DetailView {
+    private func nextIndex() {
+        self.index = self.learn.nextIndex(self.grade)
+        self.count = self.learn.getCount(self.grade)
+        self.quizItems = self.learn.getQuizItems(self.grade)
+    }
+    
+    private func beforeIndex() {
+        self.index = self.learn.beforeIndex(self.grade)
+        self.count = self.learn.getCount(self.grade)
+        self.quizItems = self.learn.getQuizItems(self.grade)
     }
 }
 
