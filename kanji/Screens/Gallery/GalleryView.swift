@@ -79,7 +79,7 @@ struct GalleryView: View {
             
             Spacer()
             
-            Text("\(self.grade.title) - 총 \(self.learn == .word ? "\(self.wordItems.count)단어" : "\(self.characters.count)자"))")
+            Text("\(self.grade.title) - 총 \(self.learn == .word ? "\(self.wordItems.count)단어" : "\(self.characters.count)자")")
                 .font(.ownglyph(size: 20))
                 .foregroundColor(.white)
                 .padding(.horizontal)
