@@ -19,7 +19,7 @@
 <img height="30" src="https://img.shields.io/badge/iOS-17.0+-silver"> <img height="30" src="https://img.shields.io/badge/Xcode-16.1-blue">
 
 ### :sparkles: Skills & Tech Stack
-* SwiftUI
+* SwiftUI
 * Github
 
 ### 🗂 Folder Structure
